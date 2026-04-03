@@ -110,7 +110,7 @@ function GlowOrb({
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-10 md:pt-0">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* === BACKGROUND LAYERS === */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 animate-ken-burns">
