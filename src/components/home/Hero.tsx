@@ -110,7 +110,7 @@ function GlowOrb({
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-start md:items-center justify-center overflow-hidden">
       {/* === BACKGROUND LAYERS === */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 animate-ken-burns">
@@ -150,7 +150,7 @@ export default function Hero() {
       </div>
 
       {/* === CONTENT === */}
-      <div className="relative z-10 max-w-5xl mx-auto px-5 text-center pt-2 md:pt-20">
+      <div className="relative z-10 max-w-5xl mx-auto px-5 text-center pt-8 md:pt-20">
         {/* Logo — mobile only */}
         <motion.div
           initial={{ opacity: 0, scale: 0.5, filter: "blur(20px)" }}
