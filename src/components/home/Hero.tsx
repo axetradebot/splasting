@@ -215,32 +215,33 @@ export default function Hero() {
           })}
         </h1>
 
-        {/* Animated divider line — hidden on mobile */}
+        {/* Animated divider line */}
         <motion.div
-          className="hidden md:flex items-center justify-center gap-3 mb-6"
+          className="flex items-center justify-center gap-3 mb-3 md:mb-6 w-full"
+          style={{ maxWidth: 420 }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 0.4 }}
         >
           <motion.div
-            className="h-px bg-gradient-to-r from-transparent via-accent-primary to-transparent"
-            initial={{ width: 0 }}
-            animate={{ width: "100%" }}
+            className="h-px flex-1 bg-gradient-to-r from-transparent via-accent-primary to-transparent"
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
             transition={{ delay: 1, duration: 0.8, ease: "easeOut" as const }}
-            style={{ maxWidth: 200 }}
+            style={{ transformOrigin: "right" }}
           />
           <motion.div
-            className="w-2 h-2 rounded-full bg-accent-primary"
+            className="w-2 h-2 rounded-full bg-accent-primary flex-shrink-0"
             initial={{ scale: 0 }}
             animate={{ scale: [0, 1.3, 1] }}
             transition={{ delay: 1.3, duration: 0.3 }}
           />
           <motion.div
-            className="h-px bg-gradient-to-r from-transparent via-accent-primary to-transparent"
-            initial={{ width: 0 }}
-            animate={{ width: "100%" }}
+            className="h-px flex-1 bg-gradient-to-r from-transparent via-accent-primary to-transparent"
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
             transition={{ delay: 1, duration: 0.8, ease: "easeOut" as const }}
-            style={{ maxWidth: 200 }}
+            style={{ transformOrigin: "left" }}
           />
         </motion.div>
 
