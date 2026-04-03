@@ -5,11 +5,11 @@ import { Phone } from "lucide-react";
 
 export default function FloatingButtons() {
   return (
-    <div className="md:hidden fixed right-4 bottom-24 z-40 flex flex-col gap-3">
-      {/* Phone button */}
+    <div className="md:hidden fixed z-40">
+      {/* Phone button — bottom left */}
       <motion.a
         href="tel:+46000000000"
-        className="relative flex items-center justify-center w-14 h-14 rounded-full bg-emerald-500 text-white shadow-lg glow-green backdrop-blur-sm"
+        className="fixed left-4 bottom-24 flex items-center justify-center w-14 h-14 rounded-full bg-emerald-500 text-white shadow-lg glow-green backdrop-blur-sm"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         animate={{
@@ -27,10 +27,10 @@ export default function FloatingButtons() {
         <Phone size={22} />
       </motion.a>
 
-      {/* Book Now button */}
+      {/* Book Now button — bottom right */}
       <motion.a
         href="/quote"
-        className="flex items-center justify-center px-4 py-3 rounded-full accent-gradient-bg text-white text-sm font-heading font-semibold shadow-lg glow-blue backdrop-blur-sm whitespace-nowrap"
+        className="fixed right-4 bottom-24 flex items-center justify-center px-4 py-3 rounded-full accent-gradient-bg text-white text-sm font-heading font-semibold shadow-lg glow-blue backdrop-blur-sm whitespace-nowrap"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.9 }}
         animate={{

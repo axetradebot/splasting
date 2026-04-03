@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { ChevronDown, Shield, Star, BadgeCheck } from "lucide-react";
+import Image from "next/image";
 import Button from "@/components/ui/Button";
 
 const words = ["Välkommen", "till", "Special", "Plastning", "&", "Målning"];
@@ -162,11 +163,44 @@ export default function Hero() {
 
       {/* === CONTENT === */}
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center pt-20">
-        {/* Flag + tagline — reveal with clip-path */}
+        {/* Logo — animates in FIRST */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5, filter: "blur(20px)" }}
+          animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+          transition={{
+            delay: 0,
+            duration: 1,
+            ease: [0.25, 0.1, 0.25, 1],
+          }}
+          className="flex justify-center mb-6 md:hidden"
+        >
+          <motion.div
+            animate={{
+              boxShadow: [
+                "0 0 0px rgba(14,165,233,0)",
+                "0 0 40px rgba(14,165,233,0.3)",
+                "0 0 0px rgba(14,165,233,0)",
+              ],
+            }}
+            transition={{ duration: 3, repeat: Infinity, delay: 1.2 }}
+            className="rounded-2xl overflow-hidden"
+          >
+            <Image
+              src="/images/logo.jpg"
+              alt="Special Plastning & Målning Västkusten"
+              width={100}
+              height={100}
+              priority
+              className="rounded-2xl"
+            />
+          </motion.div>
+        </motion.div>
+
+        {/* Flag + tagline */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8, filter: "blur(10px)" }}
           animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-          transition={{ delay: 0.1, duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+          transition={{ delay: 0.7, duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
           className="mb-8"
         >
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-text-secondary text-sm md:text-base tracking-wider uppercase">
@@ -203,7 +237,7 @@ export default function Hero() {
                   rotateX: 0,
                 }}
                 transition={{
-                  delay: 0.3 + i * 0.12,
+                  delay: 1.0 + i * 0.12,
                   duration: 0.7,
                   ease: [0.2, 0.65, 0.3, 0.9],
                 }}
@@ -223,26 +257,26 @@ export default function Hero() {
           className="flex items-center justify-center gap-3 mb-8"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.1, duration: 0.5 }}
+          transition={{ delay: 1.8, duration: 0.5 }}
         >
           <motion.div
             className="h-px bg-gradient-to-r from-transparent via-accent-primary to-transparent"
             initial={{ width: 0 }}
             animate={{ width: "100%" }}
-            transition={{ delay: 1.1, duration: 1, ease: "easeOut" }}
+            transition={{ delay: 1.8, duration: 1, ease: "easeOut" }}
             style={{ maxWidth: 200 }}
           />
           <motion.div
             className="w-2 h-2 rounded-full bg-accent-primary"
             initial={{ scale: 0 }}
             animate={{ scale: [0, 1.3, 1] }}
-            transition={{ delay: 1.5, duration: 0.4 }}
+            transition={{ delay: 2.2, duration: 0.4 }}
           />
           <motion.div
             className="h-px bg-gradient-to-r from-transparent via-accent-primary to-transparent"
             initial={{ width: 0 }}
             animate={{ width: "100%" }}
-            transition={{ delay: 1.1, duration: 1, ease: "easeOut" }}
+            transition={{ delay: 1.8, duration: 1, ease: "easeOut" }}
             style={{ maxWidth: 200 }}
           />
         </motion.div>
@@ -251,7 +285,7 @@ export default function Hero() {
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.2, duration: 0.6 }}
+          transition={{ delay: 1.9, duration: 0.6 }}
           className="text-text-secondary text-base md:text-lg mb-4"
         >
           Din pålitliga partner för
@@ -264,7 +298,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 15, scale: 0.8 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{
-                delay: 1.4 + i * 0.12,
+                delay: 2.1 + i * 0.12,
                 duration: 0.5,
                 ease: [0.25, 0.1, 0.25, 1],
               }}
@@ -289,7 +323,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
-            delay: 2.1,
+            delay: 2.8,
             duration: 0.6,
             ease: [0.25, 0.1, 0.25, 1],
           }}
@@ -303,11 +337,11 @@ export default function Hero() {
           </Button>
         </motion.div>
 
-        {/* Trust Badges — animated counters style */}
+        {/* Trust Badges */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 2.4, duration: 0.6 }}
+          transition={{ delay: 3.1, duration: 0.6 }}
           className="flex flex-wrap items-center justify-center gap-6 md:gap-10"
         >
           {trustBadges.map((badge, i) => (
@@ -315,7 +349,7 @@ export default function Hero() {
               key={badge.label}
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 2.5 + i * 0.15, duration: 0.5 }}
+              transition={{ delay: 3.2 + i * 0.15, duration: 0.5 }}
               className="flex items-center gap-2.5 text-text-secondary text-sm"
             >
               <motion.div
@@ -334,7 +368,7 @@ export default function Hero() {
       <motion.button
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 3 }}
+        transition={{ delay: 3.8 }}
         onClick={() =>
           window.scrollTo({ top: window.innerHeight, behavior: "smooth" })
         }
