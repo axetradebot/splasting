@@ -172,8 +172,8 @@ export default function Hero() {
             <Image
               src="/images/logo.jpg"
               alt="Special Plastning & Målning Västkusten"
-              width={100}
-              height={100}
+              width={130}
+              height={130}
               priority
               className="rounded-2xl"
             />
@@ -193,7 +193,7 @@ export default function Hero() {
         </motion.div>
 
         {/* Main headline */}
-        <h1 className="font-heading text-[1.7rem] md:text-6xl lg:text-7xl font-bold leading-tight mb-3 md:mb-6">
+        <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-3 md:mb-6">
           {words.map((word, i) => {
             const isHighlight =
               word === "Special" || word === "Plastning" || word === "Målning";
@@ -249,7 +249,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.1, duration: 0.4 }}
-          className="text-text-secondary text-sm md:text-lg mb-2 md:mb-4"
+          className="text-text-secondary text-base md:text-lg mb-2 md:mb-4"
         >
           Din pålitliga partner för
         </motion.p>
@@ -264,7 +264,7 @@ export default function Hero() {
                 delay: 1.2 + i * 0.08,
                 duration: 0.4,
               }}
-              className="inline-flex items-center px-3 py-1.5 md:px-4 md:py-2 rounded-full glass-card text-text-primary text-xs md:text-base font-medium cursor-default"
+              className="inline-flex items-center px-3.5 py-1.5 md:px-4 md:py-2 rounded-full glass-card text-text-primary text-sm md:text-base font-medium cursor-default"
             >
               <span className="w-1 h-1 md:w-1.5 md:h-1.5 rounded-full bg-accent-primary mr-1.5 md:mr-2" />
               {service}
@@ -279,10 +279,10 @@ export default function Hero() {
           transition={{ delay: 1.6, duration: 0.5 }}
           className="flex flex-row items-center justify-center gap-3 mb-5 md:mb-10"
         >
-          <Button href="/quote" size="sm" breathe className="text-sm px-5 py-3 sm:px-9 sm:py-4 sm:text-lg">
+          <Button href="/quote" size="sm" breathe className="text-base px-6 py-3.5 sm:px-9 sm:py-4 sm:text-lg">
             Begär Gratis Offert
           </Button>
-          <Button href="/services" variant="ghost" size="sm" className="text-sm px-5 py-3 sm:px-9 sm:py-4 sm:text-lg">
+          <Button href="/services" variant="ghost" size="sm" className="text-base px-6 py-3.5 sm:px-9 sm:py-4 sm:text-lg">
             Våra Tjänster
           </Button>
         </motion.div>
