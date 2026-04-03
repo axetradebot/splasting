@@ -20,7 +20,7 @@ const trustBadges = [
   { icon: BadgeCheck, label: "Gratis Offert" },
   { icon: Star, label: "5-Stjärnigt Betyg" },
   { icon: Shield, label: "Nöjdhetsgaranti" },
-  { icon: Clock, label: "15+ Års Erfarenhet" },
+  { icon: Clock, label: "10+ Års Erfarenhet" },
 ];
 
 function Particles() {

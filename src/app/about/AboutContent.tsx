@@ -85,7 +85,7 @@ export default function AboutContent() {
                 båtar.
               </p>
               <p>
-                Med 15+ års erfarenhet av professionell spackling, målning och
+                Med 10+ års erfarenhet av professionell spackling, målning och
                 marin restaurering tillför vi en nivå av precision och omsorg
                 som förvandlar fartyg från slitna till extraordinära. Varje
                 skrov vi restaurerar, varje interiör vi renoverar, speglar
@@ -107,7 +107,7 @@ export default function AboutContent() {
                 🛡️ Fullständigt försäkrad
               </span>
               <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass-card">
-                ⭐ 15+ Års Erfarenhet
+                ⭐ 10+ Års Erfarenhet
               </span>
             </div>
           </AnimatedSection>
