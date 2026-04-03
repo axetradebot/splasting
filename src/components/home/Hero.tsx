@@ -12,7 +12,7 @@ const services = [
   "Plastskador",
   "Underhåll",
   "Blästring",
-  "Epoxi Behandling",
+  "Epoxi",
   "Swimmingpool",
 ];
 
@@ -150,13 +150,13 @@ export default function Hero() {
       </div>
 
       {/* === CONTENT === */}
-      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center pt-6 md:pt-20">
-        {/* Logo — mobile only, animates in FIRST */}
+      <div className="relative z-10 max-w-5xl mx-auto px-5 text-center pt-2 md:pt-20">
+        {/* Logo — mobile only */}
         <motion.div
           initial={{ opacity: 0, scale: 0.5, filter: "blur(20px)" }}
           animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
           transition={{ delay: 0, duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-          className="flex justify-center mb-6 md:hidden"
+          className="flex justify-center mb-3 md:hidden"
         >
           <motion.div
             animate={{
@@ -172,8 +172,8 @@ export default function Hero() {
             <Image
               src="/images/logo.jpg"
               alt="Special Plastning & Målning Västkusten"
-              width={140}
-              height={140}
+              width={110}
+              height={110}
               priority
               className="rounded-2xl"
             />
@@ -185,15 +185,15 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.3, duration: 0.5 }}
-          className="mb-6"
+          className="mb-4 md:mb-6"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-text-secondary text-sm md:text-base tracking-wider uppercase">
+          <span className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full glass-card text-text-secondary text-xs md:text-base tracking-wider uppercase">
             🇸🇪 Sveriges Pålitliga Båtrestaureringsspecialister
           </span>
         </motion.div>
 
         {/* Main headline */}
-        <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
+        <h1 className="font-heading text-3xl md:text-6xl lg:text-7xl font-bold leading-tight mb-4 md:mb-6">
           {words.map((word, i) => {
             const isHighlight =
               word === "Special" || word === "Plastning" || word === "Målning";
@@ -215,9 +215,9 @@ export default function Hero() {
           })}
         </h1>
 
-        {/* Animated divider line */}
+        {/* Animated divider line — hidden on mobile */}
         <motion.div
-          className="flex items-center justify-center gap-3 mb-6"
+          className="hidden md:flex items-center justify-center gap-3 mb-6"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 0.4 }}
@@ -249,12 +249,12 @@ export default function Hero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.1, duration: 0.4 }}
-          className="text-text-secondary text-base md:text-lg mb-4"
+          className="text-text-secondary text-sm md:text-lg mb-2 md:mb-4"
         >
           Din pålitliga partner för
         </motion.p>
 
-        <div className="flex flex-wrap items-center justify-center gap-2 md:gap-3 mb-10">
+        <div className="flex flex-wrap items-center justify-center gap-1.5 md:gap-3 mb-6 md:mb-10">
           {services.map((service, i) => (
             <motion.span
               key={service}
@@ -264,9 +264,9 @@ export default function Hero() {
                 delay: 1.2 + i * 0.08,
                 duration: 0.4,
               }}
-              className="inline-flex items-center px-4 py-2 rounded-full glass-card text-text-primary text-sm md:text-base font-medium cursor-default"
+              className="inline-flex items-center px-3 py-1.5 md:px-4 md:py-2 rounded-full glass-card text-text-primary text-xs md:text-base font-medium cursor-default"
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-accent-primary mr-2" />
+              <span className="w-1 h-1 md:w-1.5 md:h-1.5 rounded-full bg-accent-primary mr-1.5 md:mr-2" />
               {service}
             </motion.span>
           ))}
@@ -277,12 +277,12 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.6, duration: 0.5 }}
-          className="flex flex-row items-center justify-center gap-3 mb-10"
+          className="flex flex-row items-center justify-center gap-3 mb-6 md:mb-10"
         >
-          <Button href="/quote" size="sm" breathe className="text-sm px-6 py-3.5 sm:px-9 sm:py-4 sm:text-lg">
+          <Button href="/quote" size="sm" breathe className="text-sm px-5 py-3 sm:px-9 sm:py-4 sm:text-lg">
             Begär Gratis Offert
           </Button>
-          <Button href="/services" variant="ghost" size="sm" className="text-sm px-6 py-3.5 sm:px-9 sm:py-4 sm:text-lg">
+          <Button href="/services" variant="ghost" size="sm" className="text-sm px-5 py-3 sm:px-9 sm:py-4 sm:text-lg">
             Våra Tjänster
           </Button>
         </motion.div>
@@ -292,7 +292,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.9, duration: 0.5 }}
-          className="flex flex-wrap items-center justify-center gap-4 md:gap-8"
+          className="grid grid-cols-2 gap-x-4 gap-y-2 md:flex md:flex-wrap md:items-center md:justify-center md:gap-8 max-w-xs md:max-w-none mx-auto"
         >
           {trustBadges.map((badge, i) => (
             <motion.div
@@ -300,16 +300,16 @@ export default function Hero() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 2 + i * 0.1, duration: 0.4 }}
-              className="flex items-center gap-2 text-text-secondary text-sm"
+              className="flex items-center gap-1.5 md:gap-2 text-text-secondary text-xs md:text-sm"
             >
-              <badge.icon size={18} className="text-accent-primary" />
+              <badge.icon size={14} className="text-accent-primary md:w-[18px] md:h-[18px]" />
               <span>{badge.label}</span>
             </motion.div>
           ))}
         </motion.div>
       </div>
 
-      {/* === SCROLL INDICATOR === */}
+      {/* === SCROLL INDICATOR — desktop only === */}
       <motion.button
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -317,7 +317,7 @@ export default function Hero() {
         onClick={() =>
           window.scrollTo({ top: window.innerHeight, behavior: "smooth" })
         }
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 md:bottom-12 flex flex-col items-center gap-2 cursor-pointer"
+        className="hidden md:flex absolute bottom-12 left-1/2 -translate-x-1/2 flex-col items-center gap-2 cursor-pointer"
         aria-label="Scrolla ner"
       >
         <motion.span
