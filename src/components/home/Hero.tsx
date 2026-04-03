@@ -280,10 +280,10 @@ export default function Hero() {
           transition={{ delay: 1.6, duration: 0.5 }}
           className="flex flex-row items-center justify-center gap-3 mb-5 md:mb-10"
         >
-          <Button href="/quote" size="sm" breathe className="text-base px-6 py-3.5 sm:px-9 sm:py-4 sm:text-lg">
+          <Button href="/quote" size="sm" breathe className="text-base px-7 py-4 sm:px-9 sm:py-4 sm:text-lg">
             Begär Gratis Offert
           </Button>
-          <Button href="/services" variant="ghost" size="sm" className="text-base px-6 py-3.5 sm:px-9 sm:py-4 sm:text-lg">
+          <Button href="/services" variant="ghost" size="sm" className="text-base px-7 py-4 sm:px-9 sm:py-4 sm:text-lg">
             Våra Tjänster
           </Button>
         </motion.div>
@@ -301,9 +301,9 @@ export default function Hero() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 2 + i * 0.1, duration: 0.4 }}
-              className="flex items-center gap-1.5 md:gap-2 text-text-secondary text-xs md:text-sm"
+              className="flex items-center gap-1.5 md:gap-2 text-text-secondary text-sm md:text-sm"
             >
-              <badge.icon size={14} className="text-accent-primary md:w-[18px] md:h-[18px]" />
+              <badge.icon size={16} className="text-accent-primary md:w-[18px] md:h-[18px]" />
               <span>{badge.label}</span>
             </motion.div>
           ))}
