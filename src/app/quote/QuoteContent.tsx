@@ -16,18 +16,18 @@ import QuoteForm from "@/components/forms/QuoteForm";
 const trustItems = [
   {
     icon: Clock,
-    title: "Fast Response",
-    description: "Average response time: 2 hours",
+    title: "Snabbt Svar",
+    description: "Genomsnittlig svarstid: 2 timmar",
   },
   {
     icon: Shield,
-    title: "No Obligation",
-    description: "Free quotes with no strings attached",
+    title: "Ingen Förpliktelse",
+    description: "Gratis offerter utan bindning",
   },
   {
     icon: Star,
-    title: "5-Star Service",
-    description: "Consistently rated by our customers",
+    title: "5-Stjärnig Service",
+    description: "Konsekvent betygsatta av våra kunder",
   },
 ];
 
@@ -48,18 +48,18 @@ export default function QuoteContent() {
                 href="/"
                 className="hover:text-accent-primary transition-colors"
               >
-                Home
+                Hem
               </Link>
               <ChevronRight size={14} />
-              <span className="text-text-primary">Get a Quote</span>
+              <span className="text-text-primary">Begär Offert</span>
             </div>
             <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-              Get a Free{" "}
-              <span className="text-gradient">Quote</span>
+              Begär en Gratis{" "}
+              <span className="text-gradient">Offert</span>
             </h1>
             <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-              Tell us about your project and we&apos;ll prepare a detailed,
-              no-obligation quote.
+              Berätta om ditt projekt så förbereder vi en detaljerad,
+              förutsättningslös offert.
             </p>
           </motion.div>
         </div>
@@ -68,14 +68,11 @@ export default function QuoteContent() {
       {/* Quote form + sidebar */}
       <section className="py-8 md:py-20 px-6">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12">
-          {/* Form — 2 cols */}
           <AnimatedSection className="lg:col-span-2">
             <QuoteForm />
           </AnimatedSection>
 
-          {/* Sidebar */}
           <AnimatedSection delay={0.1} className="space-y-6">
-            {/* Trust badges */}
             {trustItems.map((item) => (
               <div
                 key={item.title}
@@ -88,7 +85,7 @@ export default function QuoteContent() {
                   />
                 </div>
                 <div>
-                  <h4 className="font-heading font-semibold text-sm">
+                  <h4 className="font-heading font-semibold text-base">
                     {item.title}
                   </h4>
                   <p className="text-text-secondary text-sm">
@@ -98,24 +95,23 @@ export default function QuoteContent() {
               </div>
             ))}
 
-            {/* Quick contact */}
             <div className="glass-card rounded-2xl p-6">
               <h4 className="font-heading font-semibold mb-4">
-                Prefer to talk?
+                Föredrar du att prata?
               </h4>
               <div className="space-y-3">
                 <a
                   href="tel:+46000000000"
-                  className="flex items-center gap-3 text-text-secondary hover:text-accent-primary transition-colors text-sm"
+                  className="flex items-center gap-3 text-text-secondary hover:text-accent-primary transition-colors text-base"
                 >
-                  <Phone size={16} className="text-accent-primary" />
+                  <Phone size={18} className="text-accent-primary" />
                   +46 (0) 00 000 00 00
                 </a>
                 <a
                   href="mailto:info@specialplastning.se"
-                  className="flex items-center gap-3 text-text-secondary hover:text-accent-primary transition-colors text-sm"
+                  className="flex items-center gap-3 text-text-secondary hover:text-accent-primary transition-colors text-base"
                 >
-                  <Mail size={16} className="text-accent-primary" />
+                  <Mail size={18} className="text-accent-primary" />
                   info@specialplastning.se
                 </a>
               </div>

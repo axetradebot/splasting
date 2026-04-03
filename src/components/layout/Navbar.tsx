@@ -9,10 +9,10 @@ import Button from "@/components/ui/Button";
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/services", label: "Services" },
-  { href: "/gallery", label: "Gallery" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
+  { href: "/services", label: "Tjänster" },
+  { href: "/gallery", label: "Galleri" },
+  { href: "/about", label: "Om Oss" },
+  { href: "/contact", label: "Kontakt" },
 ];
 
 export default function Navbar() {
@@ -47,7 +47,7 @@ export default function Navbar() {
                 <a
                   href="tel:+46000000000"
                   className="flex items-center gap-2 hover:text-accent-primary transition-colors"
-                  aria-label="Call us"
+                  aria-label="Ring oss"
                 >
                   <Phone size={14} />
                   <span>+46 (0) 00 000 00 00</span>
@@ -55,13 +55,13 @@ export default function Navbar() {
                 <a
                   href="mailto:info@specialplastning.se"
                   className="flex items-center gap-2 hover:text-accent-primary transition-colors"
-                  aria-label="Email us"
+                  aria-label="Maila oss"
                 >
                   <Mail size={14} />
                   <span>info@specialplastning.se</span>
                 </a>
               </div>
-              <span>🇸🇪 Marstrand, Sweden</span>
+              <span>🇸🇪 Marstrand, Sverige</span>
             </div>
           </motion.div>
         )}
@@ -78,7 +78,7 @@ export default function Navbar() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-3" aria-label="Home">
+          <Link href="/" className="flex items-center gap-3" aria-label="Hem">
             <Image
               src="/images/logo.jpg"
               alt="Special Plastning & Målning"
@@ -104,7 +104,7 @@ export default function Navbar() {
           </div>
 
           <Button href="/quote" size="sm">
-            Get Quote
+            Begär Offert
           </Button>
         </div>
       </motion.nav>

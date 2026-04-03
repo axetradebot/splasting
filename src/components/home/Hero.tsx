@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ChevronDown, Shield, Star, BadgeCheck } from "lucide-react";
+import { ChevronDown, Shield, Star, BadgeCheck, Clock } from "lucide-react";
 import Image from "next/image";
 import Button from "@/components/ui/Button";
 
@@ -17,14 +17,15 @@ const services = [
 ];
 
 const trustBadges = [
-  { icon: BadgeCheck, label: "Free Quotes" },
-  { icon: Star, label: "5-Star Rated" },
-  { icon: Shield, label: "Satisfaction Guaranteed" },
+  { icon: BadgeCheck, label: "Gratis Offert" },
+  { icon: Star, label: "5-Stjärnigt Betyg" },
+  { icon: Shield, label: "Nöjdhetsgaranti" },
+  { icon: Clock, label: "15+ Års Erfarenhet" },
 ];
 
 function Particles() {
   const [particles] = useState(() =>
-    Array.from({ length: 40 }, (_, i) => ({
+    Array.from({ length: 15 }, (_, i) => ({
       id: i,
       x: Math.random() * 100,
       y: Math.random() * 100,
@@ -109,16 +110,14 @@ function GlowOrb({
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-10 md:pt-0">
       {/* === BACKGROUND LAYERS === */}
       <div className="absolute inset-0">
-        {/* Base gradient */}
         <div className="absolute inset-0 animate-ken-burns">
           {/* TODO: Replace with actual hero image - public/images/hero.jpg */}
           <div className="w-full h-full bg-gradient-to-br from-[#070b14] via-bg-primary to-[#0c1829]" />
         </div>
 
-        {/* Grid pattern overlay */}
         <div
           className="absolute inset-0 opacity-[0.03]"
           style={{
@@ -128,7 +127,6 @@ export default function Hero() {
           }}
         />
 
-        {/* Floating glow orbs */}
         <GlowOrb
           color="rgba(14,165,233,0.2)"
           size={400}
@@ -145,33 +143,19 @@ export default function Hero() {
           duration={22}
           delay={3}
         />
-        <GlowOrb
-          color="rgba(14,165,233,0.1)"
-          size={300}
-          x={["50%", "70%", "50%"]}
-          y={["10%", "50%", "10%"]}
-          duration={15}
-          delay={6}
-        />
 
-        {/* Particles */}
         <Particles />
 
-        {/* Gradient fade to content below */}
         <div className="absolute inset-0 bg-gradient-to-t from-bg-primary via-transparent to-bg-primary/30" />
       </div>
 
       {/* === CONTENT === */}
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center pt-6 md:pt-20">
-        {/* Logo — animates in FIRST */}
+        {/* Logo — mobile only, animates in FIRST */}
         <motion.div
           initial={{ opacity: 0, scale: 0.5, filter: "blur(20px)" }}
           animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-          transition={{
-            delay: 0,
-            duration: 1,
-            ease: [0.25, 0.1, 0.25, 1],
-          }}
+          transition={{ delay: 0, duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
           className="flex justify-center mb-6 md:hidden"
         >
           <motion.div
@@ -182,7 +166,7 @@ export default function Hero() {
                 "0 0 0px rgba(14,165,233,0)",
               ],
             }}
-            transition={{ duration: 3, repeat: Infinity, delay: 1.2 }}
+            transition={{ duration: 3, repeat: Infinity, delay: 1 }}
             className="rounded-2xl overflow-hidden"
           >
             <Image
@@ -198,53 +182,32 @@ export default function Hero() {
 
         {/* Flag + tagline */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.8, filter: "blur(10px)" }}
-          animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-          transition={{ delay: 0.7, duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-          className="mb-8"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.3, duration: 0.5 }}
+          className="mb-6"
         >
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-text-secondary text-sm md:text-base tracking-wider uppercase">
-            <motion.span
-              animate={{ rotate: [0, 10, -10, 0] }}
-              transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
-            >
-              🇸🇪
-            </motion.span>
-            Sweden&apos;s Trusted Boat Restoration Specialists
+            🇸🇪 Sveriges Pålitliga Båtrestaureringsspecialister
           </span>
         </motion.div>
 
-        {/* Main headline — blur-to-sharp + scale + y per word */}
-        <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8">
+        {/* Main headline */}
+        <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
           {words.map((word, i) => {
             const isHighlight =
               word === "Special" || word === "Plastning" || word === "Målning";
             return (
               <motion.span
                 key={i}
-                initial={{
-                  opacity: 0,
-                  y: 40,
-                  scale: 0.8,
-                  filter: "blur(12px)",
-                  rotateX: 45,
-                }}
-                animate={{
-                  opacity: 1,
-                  y: 0,
-                  scale: 1,
-                  filter: "blur(0px)",
-                  rotateX: 0,
-                }}
+                initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
+                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 transition={{
-                  delay: 1.0 + i * 0.12,
-                  duration: 0.7,
+                  delay: 0.5 + i * 0.08,
+                  duration: 0.5,
                   ease: [0.2, 0.65, 0.3, 0.9],
                 }}
-                className={`inline-block mr-[0.3em] ${
-                  isHighlight ? "hero-shimmer" : ""
-                }`}
-                style={{ perspective: "600px" }}
+                className={`inline-block mr-[0.3em] ${isHighlight ? "hero-shimmer" : ""}`}
               >
                 {word}
               </motion.span>
@@ -254,65 +217,56 @@ export default function Hero() {
 
         {/* Animated divider line */}
         <motion.div
-          className="flex items-center justify-center gap-3 mb-8"
+          className="flex items-center justify-center gap-3 mb-6"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.8, duration: 0.5 }}
+          transition={{ delay: 1, duration: 0.4 }}
         >
           <motion.div
             className="h-px bg-gradient-to-r from-transparent via-accent-primary to-transparent"
             initial={{ width: 0 }}
             animate={{ width: "100%" }}
-            transition={{ delay: 1.8, duration: 1, ease: "easeOut" }}
+            transition={{ delay: 1, duration: 0.8, ease: "easeOut" as const }}
             style={{ maxWidth: 200 }}
           />
           <motion.div
             className="w-2 h-2 rounded-full bg-accent-primary"
             initial={{ scale: 0 }}
             animate={{ scale: [0, 1.3, 1] }}
-            transition={{ delay: 2.2, duration: 0.4 }}
+            transition={{ delay: 1.3, duration: 0.3 }}
           />
           <motion.div
             className="h-px bg-gradient-to-r from-transparent via-accent-primary to-transparent"
             initial={{ width: 0 }}
             animate={{ width: "100%" }}
-            transition={{ delay: 1.8, duration: 1, ease: "easeOut" }}
+            transition={{ delay: 1, duration: 0.8, ease: "easeOut" as const }}
             style={{ maxWidth: 200 }}
           />
         </motion.div>
 
-        {/* Subtitle — "Din pålitliga partner för" + staggered service tags */}
+        {/* Subtitle */}
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.9, duration: 0.6 }}
+          transition={{ delay: 1.1, duration: 0.4 }}
           className="text-text-secondary text-base md:text-lg mb-4"
         >
           Din pålitliga partner för
         </motion.p>
 
-        <div className="flex flex-wrap items-center justify-center gap-2 md:gap-3 mb-12">
+        <div className="flex flex-wrap items-center justify-center gap-2 md:gap-3 mb-10">
           {services.map((service, i) => (
             <motion.span
               key={service}
-              initial={{ opacity: 0, y: 15, scale: 0.8 }}
+              initial={{ opacity: 0, y: 10, scale: 0.9 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{
-                delay: 2.1 + i * 0.12,
-                duration: 0.5,
-                ease: [0.25, 0.1, 0.25, 1],
+                delay: 1.2 + i * 0.08,
+                duration: 0.4,
               }}
-              className="inline-flex items-center px-4 py-2 rounded-full glass-card text-text-primary text-sm md:text-base font-medium hover:border-accent-primary/30 transition-colors duration-300 cursor-default"
+              className="inline-flex items-center px-4 py-2 rounded-full glass-card text-text-primary text-sm md:text-base font-medium cursor-default"
             >
-              <motion.span
-                className="w-1.5 h-1.5 rounded-full bg-accent-primary mr-2"
-                animate={{ scale: [1, 1.4, 1], opacity: [0.7, 1, 0.7] }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  delay: i * 0.3,
-                }}
-              />
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-primary mr-2" />
               {service}
             </motion.span>
           ))}
@@ -320,20 +274,16 @@ export default function Hero() {
 
         {/* CTA Buttons */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{
-            delay: 2.8,
-            duration: 0.6,
-            ease: [0.25, 0.1, 0.25, 1],
-          }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14"
+          transition={{ delay: 1.6, duration: 0.5 }}
+          className="flex flex-row items-center justify-center gap-3 mb-10"
         >
-          <Button href="/quote" size="lg" breathe>
-            Get a Free Quote
+          <Button href="/quote" size="sm" breathe className="text-sm px-6 py-3.5 sm:px-9 sm:py-4 sm:text-lg">
+            Begär Gratis Offert
           </Button>
-          <Button href="/services" variant="ghost" size="lg">
-            Our Services
+          <Button href="/services" variant="ghost" size="sm" className="text-sm px-6 py-3.5 sm:px-9 sm:py-4 sm:text-lg">
+            Våra Tjänster
           </Button>
         </motion.div>
 
@@ -341,23 +291,18 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 3.1, duration: 0.6 }}
-          className="flex flex-wrap items-center justify-center gap-6 md:gap-10"
+          transition={{ delay: 1.9, duration: 0.5 }}
+          className="flex flex-wrap items-center justify-center gap-4 md:gap-8"
         >
           {trustBadges.map((badge, i) => (
             <motion.div
               key={badge.label}
-              initial={{ opacity: 0, y: 15 }}
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 3.2 + i * 0.15, duration: 0.5 }}
-              className="flex items-center gap-2.5 text-text-secondary text-sm"
+              transition={{ delay: 2 + i * 0.1, duration: 0.4 }}
+              className="flex items-center gap-2 text-text-secondary text-sm"
             >
-              <motion.div
-                whileHover={{ scale: 1.2, rotate: 10 }}
-                transition={{ type: "spring" as const, stiffness: 400, damping: 10 }}
-              >
-                <badge.icon size={18} className="text-accent-primary" />
-              </motion.div>
+              <badge.icon size={18} className="text-accent-primary" />
               <span>{badge.label}</span>
             </motion.div>
           ))}
@@ -368,12 +313,12 @@ export default function Hero() {
       <motion.button
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 3.8 }}
+        transition={{ delay: 2.5 }}
         onClick={() =>
           window.scrollTo({ top: window.innerHeight, behavior: "smooth" })
         }
         className="absolute bottom-8 left-1/2 -translate-x-1/2 md:bottom-12 flex flex-col items-center gap-2 cursor-pointer"
-        aria-label="Scroll down"
+        aria-label="Scrolla ner"
       >
         <motion.span
           className="text-text-secondary/40 text-xs tracking-widest uppercase"
@@ -390,7 +335,6 @@ export default function Hero() {
         </motion.div>
       </motion.button>
 
-      {/* Edge vignette */}
       <div className="absolute inset-0 pointer-events-none shadow-[inset_0_0_150px_rgba(0,0,0,0.6)]" />
     </section>
   );

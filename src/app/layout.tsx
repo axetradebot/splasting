@@ -25,23 +25,23 @@ export const metadata: Metadata = {
     template: "%s | Special Plastning & Målning Västkusten",
   },
   description:
-    "Premium boat interior and exterior restoration in Marstrand, Sweden. Expert plastering, hull repair, gelcoat restoration, and custom finishes across the Swedish West Coast.",
+    "Premium båtrestaurering i Marstrand, Sverige. Expert spackling, skrovreparation, gelcoat-restaurering och specialfinish längs Svenska Västkusten.",
   keywords: [
-    "boat restoration",
+    "båtrestaurering",
     "Marstrand",
-    "Sweden",
-    "boat plastering",
-    "hull repair",
-    "gelcoat restoration",
-    "Swedish West Coast",
-    "båtrenovering",
+    "Sverige",
+    "båtspackling",
+    "skrovreparation",
+    "gelcoat restaurering",
+    "Svenska Västkusten",
+    "boat restoration Sweden",
   ],
   openGraph: {
     title: "Special Plastning & Målning Västkusten",
     description:
-      "Premium boat restoration in Marstrand, Sweden. Expert craftsmanship, stunning results.",
+      "Premium båtrestaurering i Marstrand, Sverige. Professionellt hantverk, enastående resultat.",
     type: "website",
-    locale: "en_SE",
+    locale: "sv_SE",
     url: "https://specialplastning.se",
     siteName: "Special Plastning & Målning Västkusten",
   },
@@ -78,7 +78,7 @@ export default function RootLayout({
 
   return (
     <html
-      lang="en"
+      lang="sv"
       className={`${dmSans.variable} ${outfit.variable}`}
       style={{ backgroundColor: "#0a0f1a" }}
     >

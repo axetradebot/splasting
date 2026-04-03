@@ -8,31 +8,31 @@ import SectionHeading from "@/components/ui/SectionHeading";
 const testimonials = [
   {
     name: "Erik Lindqvist",
-    text: "Absolutely fantastic work on our sailboat's interior. The plastering was flawless, and the attention to detail was remarkable. Highly recommend!",
+    text: "Helt fantastiskt arbete med vår segelbåts interiör. Spacklingen var felfri och detaljnivån var anmärkningsvärd. Rekommenderas varmt!",
     rating: 5,
-    date: "March 2026",
+    date: "Mars 2026",
   },
   {
     name: "Ingrid Bergström",
-    text: "They restored our hull to better-than-new condition. Professional, punctual, and the results speak for themselves. Will definitely use again.",
+    text: "De restaurerade vårt skrov till bättre-än-nytt skick. Professionella, punktliga och resultaten talar för sig själva. Anlitar dem definitivt igen.",
     rating: 5,
-    date: "February 2026",
+    date: "Februari 2026",
   },
   {
     name: "Lars Johansson",
-    text: "Best boat restoration service on the West Coast. Fair pricing, excellent communication throughout, and the quality is outstanding.",
+    text: "Bästa båtrestaureringsföretaget på Västkusten. Rättvisa priser, utmärkt kommunikation och kvaliteten är enastående.",
     rating: 5,
-    date: "January 2026",
+    date: "Januari 2026",
   },
   {
     name: "Anna Svensson",
-    text: "Our old wooden boat looks absolutely stunning after their restoration. They truly care about their craft and it shows in every detail.",
+    text: "Vår gamla träbåt ser helt fantastisk ut efter deras restaurering. De bryr sig verkligen om sitt hantverk och det syns i varje detalj.",
     rating: 5,
     date: "December 2025",
   },
   {
     name: "Magnus Karlsson",
-    text: "From the initial quote to the final result — everything was seamless. The custom work they did on our cabin exceeded all expectations.",
+    text: "Från första offerten till det färdiga resultatet — allt var sömlöst. Det specialarbete de gjorde i vår kajuta överträffade alla förväntningar.",
     rating: 5,
     date: "November 2025",
   },
@@ -78,24 +78,39 @@ export default function Testimonials() {
     <section className="py-20 md:py-28 px-6">
       <div className="max-w-4xl mx-auto">
         <SectionHeading
-          title="What Our Customers Say"
-          highlight="Customers"
-          subtitle="Real feedback from boat owners across the Swedish West Coast."
+          title="Vad Våra Kunder Säger"
+          highlight="Kunder"
+          subtitle="Ärlig feedback från båtägare längs Svenska Västkusten."
         />
 
+        {/* Google Reviews badge */}
+        <div className="flex items-center justify-center gap-3 mb-8">
+          <div className="flex items-center gap-1">
+            {[...Array(5)].map((_, i) => (
+              <Star
+                key={i}
+                size={18}
+                className="text-accent-warm fill-accent-warm"
+              />
+            ))}
+          </div>
+          <span className="text-text-secondary text-sm">
+            5.0 på Google Reviews
+          </span>
+        </div>
+
         <div className="relative">
-          {/* Navigation arrows — desktop */}
           <button
             onClick={prev}
             className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-14 items-center justify-center w-10 h-10 rounded-full glass-card text-text-secondary hover:text-accent-primary transition-colors"
-            aria-label="Previous testimonial"
+            aria-label="Föregående omdöme"
           >
             <ChevronLeft size={20} />
           </button>
           <button
             onClick={next}
             className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-14 items-center justify-center w-10 h-10 rounded-full glass-card text-text-secondary hover:text-accent-primary transition-colors"
-            aria-label="Next testimonial"
+            aria-label="Nästa omdöme"
           >
             <ChevronRight size={20} />
           </button>
@@ -112,24 +127,14 @@ export default function Testimonials() {
                 transition={{ duration: 0.4, ease: "easeInOut" }}
                 className="glass-card rounded-2xl p-8 md:p-12 text-center"
               >
-                {/* Stars */}
                 <div className="flex items-center justify-center gap-1 mb-6">
                   {Array.from({ length: testimonials[current].rating }).map(
                     (_, i) => (
-                      <motion.div
+                      <Star
                         key={i}
-                        animate={{ scale: [1, 0.9, 1], opacity: [1, 0.7, 1] }}
-                        transition={{
-                          duration: 1.5,
-                          repeat: Infinity,
-                          delay: i * 0.2,
-                        }}
-                      >
-                        <Star
-                          size={20}
-                          className="text-accent-warm fill-accent-warm"
-                        />
-                      </motion.div>
+                        size={20}
+                        className="text-accent-warm fill-accent-warm"
+                      />
                     )
                   )}
                 </div>
@@ -150,7 +155,6 @@ export default function Testimonials() {
             </AnimatePresence>
           </div>
 
-          {/* Dots indicator */}
           <div className="flex items-center justify-center gap-2 mt-6">
             {testimonials.map((_, i) => (
               <button
@@ -164,7 +168,7 @@ export default function Testimonials() {
                     ? "w-6 bg-accent-primary"
                     : "bg-text-secondary/30 hover:bg-text-secondary/50"
                 }`}
-                aria-label={`Go to testimonial ${i + 1}`}
+                aria-label={`Gå till omdöme ${i + 1}`}
               />
             ))}
           </div>

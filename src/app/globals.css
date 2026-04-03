@@ -177,3 +177,26 @@ main {
   background-clip: text;
   animation: shimmer 4s linear infinite;
 }
+
+/* ===== prefers-reduced-motion: global disable ===== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .hero-shimmer {
+    animation: none;
+  }
+
+  .animate-wave,
+  .animate-wave-slow,
+  .animate-twinkle,
+  .animate-ken-burns {
+    animation: none;
+  }
+}

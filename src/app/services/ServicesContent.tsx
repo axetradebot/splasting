@@ -7,6 +7,7 @@ import {
   Shield,
   ChevronRight,
   CheckCircle2,
+  Phone,
 } from "lucide-react";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import Button from "@/components/ui/Button";
@@ -17,56 +18,45 @@ const services = [
   {
     id: "exterior",
     icon: Sun,
-    title: "Exterior Restoration",
+    title: "Exteriör Restaurering",
     description:
-      "Bring your boat's exterior back to life with our comprehensive restoration process. From hull repair to a showroom-quality finish.",
+      "Ge din båts exteriör nytt liv med vår heltäckande restaureringsprocess. Från skrovreparation till showroom-kvalitet.",
     gradient: "from-sky-500/20 to-blue-600/20",
     features: [
-      "Hull cleaning and preparation",
-      "Gelcoat repair and restoration",
-      "Oxidation removal",
-      "Machine polishing to mirror finish",
-      "Anti-fouling treatment",
-      "Protective wax coating",
-      "UV protection application",
+      "Skrovrengöring och förberedelse",
+      "Gelcoat-reparation och restaurering",
+      "Maskinpolering till spegelblank yta",
+      "Bottenmålning och UV-skydd",
     ],
-    /* TODO: Add real service details and images */
   },
   {
     id: "interior",
     icon: Sparkles,
-    title: "Interior Restoration",
+    title: "Interiör Restaurering",
     description:
-      "Transform your boat's interior with expert plastering, upholstery work, and meticulous refinishing. We make cabins feel brand new.",
+      "Förvandla din båts interiör med professionell spackling, klädselarbete och noggrann renovering. Vi gör kajutan som ny.",
     gradient: "from-cyan-500/20 to-teal-600/20",
     features: [
-      "Surface plastering and repair",
-      "Interior painting and finishing",
-      "Woodwork restoration",
-      "Upholstery repair and replacement",
-      "Detail cleaning and protection",
-      "Custom cabinetry touch-ups",
-      "Headliner replacement",
+      "Spackling och ytbehandling",
+      "Interiörmålning och finish",
+      "Träarbeten och restaurering",
+      "Klädsel — reparation och byte",
+      "Detaljrengöring och skydd",
     ],
-    /* TODO: Add real service details and images */
   },
   {
     id: "custom",
     icon: Shield,
-    title: "Custom Work",
+    title: "Specialarbeten",
     description:
-      "Have something specific in mind? We specialize in bespoke modifications and custom finishes that bring your vision to life.",
+      "Har du något specifikt i åtanke? Vi specialiserar oss på skräddarsydda modifikationer och specialfinish som förverkligar din vision.",
     gradient: "from-amber-500/20 to-orange-600/20",
     features: [
-      "Bespoke design consultation",
-      "Custom paint and finishes",
-      "Structural modifications",
-      "Specialty coatings",
-      "One-off fabrication",
-      "Color matching and custom blends",
-      "Concept to completion service",
+      "Skräddarsydd designkonsultation",
+      "Speciallackering och finish",
+      "Strukturella modifikationer",
+      "Färgmatchning och specialblandning",
     ],
-    /* TODO: Add real service details and images */
   },
 ];
 
@@ -87,17 +77,17 @@ export default function ServicesContent() {
                 href="/"
                 className="hover:text-accent-primary transition-colors"
               >
-                Home
+                Hem
               </Link>
               <ChevronRight size={14} />
-              <span className="text-text-primary">Services</span>
+              <span className="text-text-primary">Tjänster</span>
             </div>
             <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-              Our <span className="text-gradient">Services</span>
+              Våra <span className="text-gradient">Tjänster</span>
             </h1>
             <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-              From hull to helm — comprehensive restoration services tailored to
-              your vessel&apos;s needs.
+              Från köl till mast — heltäckande restaureringstjänster anpassade
+              efter ditt fartygs behov.
             </p>
           </motion.div>
         </div>
@@ -116,22 +106,16 @@ export default function ServicesContent() {
                 index % 2 === 1 ? "md:flex-row-reverse" : ""
               }`}
             >
-              {/* Image placeholder */}
               <AnimatedSection
                 className={index % 2 === 1 ? "md:order-2" : ""}
               >
                 <div
                   className={`aspect-[4/3] rounded-2xl bg-gradient-to-br ${service.gradient} flex items-center justify-center`}
                 >
-                  {/* TODO: Replace with real service image */}
-                  <service.icon
-                    size={80}
-                    className="text-white/20"
-                  />
+                  <service.icon size={80} className="text-white/20" />
                 </div>
               </AnimatedSection>
 
-              {/* Content */}
               <AnimatedSection
                 className={index % 2 === 1 ? "md:order-1" : ""}
                 delay={0.1}
@@ -152,12 +136,11 @@ export default function ServicesContent() {
                   {service.description}
                 </p>
 
-                {/* TODO: Add real service details */}
                 <ul className="space-y-3 mb-8">
                   {service.features.map((feature) => (
                     <li
                       key={feature}
-                      className="flex items-center gap-3 text-text-secondary"
+                      className="flex items-center gap-3 text-text-secondary text-base"
                     >
                       <CheckCircle2
                         size={18}
@@ -168,7 +151,7 @@ export default function ServicesContent() {
                   ))}
                 </ul>
 
-                <Button href="/quote">Get a Quote</Button>
+                <Button href="/quote">Begär Offert</Button>
               </AnimatedSection>
             </div>
           </div>
@@ -178,19 +161,35 @@ export default function ServicesContent() {
       {/* Bottom CTA */}
       <section className="py-20 px-6 text-center">
         <SectionHeading
-          title="Not Sure What You Need?"
-          highlight="Need"
-          subtitle="Contact us for a free consultation. We'll inspect your boat and recommend the best approach."
+          title="Osäker på Vad Du Behöver?"
+          highlight="Behöver"
+          subtitle="Kontakta oss för en gratis konsultation. Vi inspekterar din båt och rekommenderar bästa tillvägagångssättet."
         />
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Button href="/quote" size="lg">
-            Request a Quote
+            Begär Offert
           </Button>
           <Button href="/contact" variant="ghost" size="lg">
-            Contact Us
+            Kontakta Oss
           </Button>
         </div>
       </section>
+
+      {/* Sticky bottom CTA — mobile only */}
+      <div className="md:hidden fixed bottom-16 left-0 right-0 z-30 px-3 pb-2 safe-bottom">
+        <div className="flex items-center gap-2 glass-card-strong rounded-xl p-2">
+          <Button href="/quote" size="sm" className="flex-1 text-sm py-3 justify-center">
+            Begär Offert
+          </Button>
+          <a
+            href="tel:+46000000000"
+            className="flex items-center justify-center gap-2 flex-1 text-sm py-3 rounded-xl bg-bg-elevated border border-glass-border text-text-primary font-heading font-semibold"
+          >
+            <Phone size={16} className="text-accent-primary" />
+            Ring Oss
+          </a>
+        </div>
+      </div>
     </>
   );
 }

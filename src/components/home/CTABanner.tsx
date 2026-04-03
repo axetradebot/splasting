@@ -6,10 +6,8 @@ import Button from "@/components/ui/Button";
 export default function CTABanner() {
   return (
     <section className="relative py-20 md:py-28 px-6 overflow-hidden">
-      {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-accent-primary/10 via-bg-primary to-accent-secondary/10" />
 
-      {/* Animated wave shapes */}
       <div className="absolute bottom-0 left-0 right-0 overflow-hidden h-20 opacity-10">
         <svg
           className="absolute bottom-0 w-[200%] h-full animate-wave"
@@ -43,8 +41,8 @@ export default function CTABanner() {
           transition={{ duration: 0.6 }}
           className="font-heading text-3xl md:text-5xl font-bold mb-6"
         >
-          Ready to Restore{" "}
-          <span className="text-gradient">Your Boat?</span>
+          Redo att Restaurera{" "}
+          <span className="text-gradient">Din Båt?</span>
         </motion.h2>
         <motion.p
           initial={{ opacity: 0 }}
@@ -53,8 +51,8 @@ export default function CTABanner() {
           transition={{ delay: 0.2, duration: 0.6 }}
           className="text-text-secondary text-lg mb-10 max-w-xl mx-auto"
         >
-          Get a free, no-obligation quote today. We&apos;ll have it ready for
-          you within hours.
+          Begär en gratis, förutsättningslös offert idag. Vi har den redo åt dig
+          inom ett par timmar.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -64,10 +62,10 @@ export default function CTABanner() {
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <Button href="/quote" size="lg" breathe>
-            Get a Free Quote
+            Begär Gratis Offert
           </Button>
           <Button href="tel:+46000000000" variant="ghost" size="lg">
-            Call Us Now
+            Ring Oss Nu
           </Button>
         </motion.div>
       </div>

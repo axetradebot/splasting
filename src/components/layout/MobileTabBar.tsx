@@ -12,11 +12,11 @@ import {
 } from "lucide-react";
 
 const tabs = [
-  { href: "/", label: "Home", icon: Home },
-  { href: "/services", label: "Services", icon: Wrench },
-  { href: "/gallery", label: "Gallery", icon: ImageIcon },
-  { href: "/about", label: "About", icon: Users },
-  { href: "/contact", label: "Contact", icon: MessageSquare },
+  { href: "/", label: "Hem", icon: Home },
+  { href: "/services", label: "Tjänster", icon: Wrench },
+  { href: "/gallery", label: "Galleri", icon: ImageIcon },
+  { href: "/about", label: "Om Oss", icon: Users },
+  { href: "/contact", label: "Kontakt", icon: MessageSquare },
 ];
 
 export default function MobileTabBar() {
@@ -25,7 +25,7 @@ export default function MobileTabBar() {
   return (
     <nav
       className="md:hidden fixed bottom-0 left-0 right-0 z-50 safe-bottom"
-      aria-label="Mobile navigation"
+      aria-label="Mobilnavigering"
     >
       <div className="glass-card-strong border-t border-glass-border">
         <div className="flex items-center justify-around px-2 py-2">
@@ -56,10 +56,10 @@ export default function MobileTabBar() {
                     isActive ? "text-accent-primary" : "text-text-secondary"
                   }`}
                 >
-                  <Icon size={22} strokeWidth={isActive ? 2.5 : 1.5} />
+                  <Icon size={24} strokeWidth={isActive ? 2.5 : 1.5} />
                 </motion.div>
                 <span
-                  className={`text-[10px] mt-0.5 transition-colors duration-200 ${
+                  className={`text-xs mt-0.5 transition-colors duration-200 ${
                     isActive
                       ? "text-accent-primary font-semibold"
                       : "text-text-secondary"

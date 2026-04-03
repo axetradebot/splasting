@@ -30,13 +30,13 @@ export default function FormInput({
   rows = 4,
 }: FormInputProps) {
   const inputStyles =
-    "w-full bg-bg-elevated border border-glass-border rounded-xl px-4 py-3 text-text-primary placeholder:text-text-secondary/50 focus:outline-none focus:border-accent-primary/50 focus:ring-1 focus:ring-accent-primary/20 transition-all duration-300";
+    "w-full bg-bg-elevated border border-glass-border rounded-xl px-4 py-3.5 text-base text-text-primary placeholder:text-text-secondary/50 focus:outline-none focus:border-accent-primary/50 focus:ring-1 focus:ring-accent-primary/20 transition-all duration-300";
 
   return (
     <div className="space-y-2">
       <label
         htmlFor={name}
-        className="block text-sm font-medium text-text-secondary"
+        className="block text-sm font-semibold text-text-secondary"
       >
         {label}
         {required && <span className="text-accent-primary ml-1">*</span>}
@@ -52,7 +52,7 @@ export default function FormInput({
           className={`${inputStyles} appearance-none cursor-pointer`}
           aria-label={label}
         >
-          <option value="">Select...</option>
+          <option value="">Välj...</option>
           {options.map((opt) => (
             <option key={opt.value} value={opt.value}>
               {opt.label}

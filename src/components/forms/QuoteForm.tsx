@@ -11,11 +11,8 @@ type FormStatus = "idle" | "loading" | "success" | "error";
 export default function QuoteForm() {
   const [form, setForm] = useState({
     name: "",
-    email: "",
     phone: "",
-    boatType: "",
     service: "",
-    preferredDate: "",
     details: "",
   });
   const [status, setStatus] = useState<FormStatus>("idle");
@@ -43,15 +40,7 @@ export default function QuoteForm() {
       );
       if (res.ok) {
         setStatus("success");
-        setForm({
-          name: "",
-          email: "",
-          phone: "",
-          boatType: "",
-          service: "",
-          preferredDate: "",
-          details: "",
-        });
+        setForm({ name: "", phone: "", service: "", details: "" });
       } else {
         setStatus("error");
       }
@@ -82,17 +71,17 @@ export default function QuoteForm() {
               />
             </motion.div>
             <h3 className="font-heading text-2xl font-bold mb-2">
-              Quote Request Sent!
+              Offertförfrågan Skickad!
             </h3>
-            <p className="text-text-secondary">
-              We&apos;ll review your request and get back to you within a few
-              hours with a detailed quote.
+            <p className="text-text-secondary text-base">
+              Vi granskar din förfrågan och återkommer inom ett par timmar med
+              en detaljerad offert.
             </p>
             <button
               onClick={() => setStatus("idle")}
               className="mt-6 text-accent-primary hover:underline text-sm"
             >
-              Submit another request
+              Skicka en ny förfrågan
             </button>
           </motion.div>
         ) : (
@@ -106,37 +95,24 @@ export default function QuoteForm() {
           >
             <div>
               <h3 className="font-heading text-xl font-semibold mb-1">
-                Request a Free Quote
+                Begär en Gratis Offert
               </h3>
-              <p className="text-text-secondary text-sm">
-                Fill in the details below and we&apos;ll prepare a personalized
-                quote for you.
+              <p className="text-text-secondary text-base">
+                Fyll i uppgifterna nedan så kontaktar vi dig snabbt.
               </p>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <FormInput
-                label="Name"
+                label="Namn"
                 name="name"
-                placeholder="Your name"
+                placeholder="Ditt namn"
                 required
                 value={form.name}
                 onChange={handleChange}
               />
               <FormInput
-                label="Email"
-                name="email"
-                type="email"
-                placeholder="your@email.com"
-                required
-                value={form.email}
-                onChange={handleChange}
-              />
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-              <FormInput
-                label="Phone"
+                label="Telefon"
                 name="phone"
                 type="tel"
                 placeholder="+46 ..."
@@ -144,52 +120,36 @@ export default function QuoteForm() {
                 value={form.phone}
                 onChange={handleChange}
               />
-              <FormInput
-                label="Boat Type / Size"
-                name="boatType"
-                placeholder="e.g. 35ft Sailboat"
-                value={form.boatType}
-                onChange={handleChange}
-              />
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-              <FormInput
-                label="Service Required"
-                name="service"
-                value={form.service}
-                onChange={handleChange}
-                required
-                options={[
-                  { value: "exterior", label: "Exterior Restoration" },
-                  { value: "interior", label: "Interior Restoration" },
-                  { value: "custom", label: "Custom Work" },
-                  { value: "multiple", label: "Multiple Services" },
-                  { value: "other", label: "Other" },
-                ]}
-              />
-              <FormInput
-                label="Preferred Start Date"
-                name="preferredDate"
-                type="date"
-                value={form.preferredDate}
-                onChange={handleChange}
-              />
             </div>
 
             <FormInput
-              label="Additional Details"
+              label="Tjänst"
+              name="service"
+              value={form.service}
+              onChange={handleChange}
+              required
+              options={[
+                { value: "exterior", label: "Exteriör Restaurering" },
+                { value: "interior", label: "Interiör Restaurering" },
+                { value: "custom", label: "Specialarbeten" },
+                { value: "multiple", label: "Flera Tjänster" },
+                { value: "other", label: "Annat" },
+              ]}
+            />
+
+            <FormInput
+              label="Meddelande"
               name="details"
-              placeholder="Tell us about your boat and what you'd like done. We'll contact you for photos if needed."
+              placeholder="Berätta om din båt och vad du vill ha gjort. Vi kontaktar dig för foton vid behov."
               textarea
-              rows={5}
+              rows={4}
               value={form.details}
               onChange={handleChange}
             />
 
-            <p className="text-text-secondary text-xs">
-              📸 We&apos;ll contact you for photos of your boat after receiving
-              your request.
+            <p className="text-text-secondary text-sm">
+              📸 Vi kontaktar dig för foton av din båt efter att vi mottagit din
+              förfrågan.
             </p>
 
             {status === "error" && (
@@ -199,7 +159,7 @@ export default function QuoteForm() {
                 className="flex items-center gap-2 text-red-400 text-sm"
               >
                 <AlertCircle size={16} />
-                Something went wrong. Please try again.
+                Något gick fel. Vänligen försök igen.
               </motion.div>
             )}
 
@@ -213,7 +173,7 @@ export default function QuoteForm() {
               ) : (
                 <>
                   <Send size={18} className="mr-2" />
-                  Submit Quote Request
+                  Skicka Offertförfrågan
                 </>
               )}
             </Button>

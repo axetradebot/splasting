@@ -7,28 +7,28 @@ import SectionHeading from "@/components/ui/SectionHeading";
 
 const faqs = [
   {
-    q: "What types of boats do you work on?",
-    a: "We work on all types of vessels — sailboats, motorboats, wooden classics, and modern fiberglass hulls. Whether it's a 20-foot day cruiser or a 60-foot yacht, we have the experience and tools to deliver exceptional results.",
+    q: "Vilka typer av båtar arbetar ni med?",
+    a: "Vi arbetar med alla typer av fartyg — segelbåtar, motorbåtar, klassiska träbåtar och moderna glasfiberskrov. Oavsett om det är en 20-fots dagskryssare eller en 60-fots yacht har vi erfarenheten och verktygen för att leverera exceptionella resultat.",
   },
   {
-    q: "How long does a typical restoration take?",
-    a: "Timeline depends on the scope of work. A standard exterior polish and gelcoat repair typically takes 2–5 days. Full interior restorations can take 1–3 weeks. We'll provide a detailed timeline with your quote.",
+    q: "Hur lång tid tar en typisk restaurering?",
+    a: "Tidsramen beror på arbetets omfattning. En standard exteriörpolering och gelcoat-reparation tar vanligtvis 2–5 dagar. Kompletta interiörrenoveringar kan ta 1–3 veckor. Vi ger en detaljerad tidsplan med din offert.",
   },
   {
-    q: "Do you offer free quotes?",
-    a: "Absolutely! We provide free, no-obligation quotes for all our services. Simply fill out our quote form or give us a call, and we'll get back to you within a few hours.",
+    q: "Erbjuder ni gratis offerter?",
+    a: "Absolut! Vi erbjuder gratis, förutsättningslösa offerter för alla våra tjänster. Fyll bara i vårt offertformulär eller ring oss, så återkommer vi inom ett par timmar.",
   },
   {
-    q: "What areas do you serve?",
-    a: "We're based in Marstrand and serve the entire Swedish West Coast, including Gothenburg, Kungälv, Stenungsund, Tjörn, and Orust. We can also arrange service for boats in other locations — just ask!",
+    q: "Vilka områden betjänar ni?",
+    a: "Vi är baserade i Marstrand och betjänar hela Svenska Västkusten, inklusive Göteborg, Kungälv, Stenungsund, Tjörn och Orust. Vi kan även arrangera service för båtar på andra platser — fråga bara!",
   },
   {
-    q: "What's included in an exterior restoration?",
-    a: "Our exterior restoration typically includes hull cleaning and preparation, gelcoat repair, oxidation removal, machine polishing, anti-fouling treatment, and a protective wax finish. We tailor each job to your boat's specific needs.",
+    q: "Vad ingår i en exteriörrestaurering?",
+    a: "Vår exteriörrestaurering omfattar vanligtvis skrovrengöring och förberedelse, gelcoat-reparation, oxidationsborttagning, maskinpolering, bottenmålning och en skyddande vaxfinish. Vi anpassar varje jobb efter din båts specifika behov.",
   },
   {
-    q: "Can I see examples of your work?",
-    a: "Of course! Visit our Gallery page to see before-and-after photos of our recent projects. We're proud of every restoration we complete and love sharing the results.",
+    q: "Kan jag se exempel på ert arbete?",
+    a: "Självklart! Besök vår Galleri-sida för att se före-och-efter-foton av våra senaste projekt. Vi är stolta över varje restaurering vi utför och delar gärna resultaten.",
   },
 ];
 
@@ -39,9 +39,9 @@ export default function FAQ() {
     <section className="py-20 md:py-28 px-6 bg-bg-secondary/50">
       <div className="max-w-3xl mx-auto">
         <SectionHeading
-          title="Frequently Asked Questions"
-          highlight="Questions"
-          subtitle="Got questions? We've got answers."
+          title="Vanliga Frågor"
+          highlight="Frågor"
+          subtitle="Har du frågor? Vi har svaren."
         />
 
         <div className="space-y-3">
@@ -59,7 +59,7 @@ export default function FAQ() {
                   className="w-full flex items-center justify-between p-5 text-left"
                   aria-expanded={openIndex === i}
                 >
-                  <span className="font-heading font-medium text-text-primary pr-4">
+                  <span className="font-heading font-medium text-text-primary pr-4 text-base">
                     {faq.q}
                   </span>
                   <motion.div
@@ -82,7 +82,7 @@ export default function FAQ() {
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                       className="overflow-hidden"
                     >
-                      <div className="px-5 pb-5 text-text-secondary leading-relaxed">
+                      <div className="px-5 pb-5 text-text-secondary leading-relaxed text-base">
                         {faq.a}
                       </div>
                     </motion.div>

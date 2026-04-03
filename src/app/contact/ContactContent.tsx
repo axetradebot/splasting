@@ -23,17 +23,17 @@ export default function ContactContent() {
                 href="/"
                 className="hover:text-accent-primary transition-colors"
               >
-                Home
+                Hem
               </Link>
               <ChevronRight size={14} />
-              <span className="text-text-primary">Contact</span>
+              <span className="text-text-primary">Kontakt</span>
             </div>
             <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-              Get in <span className="text-gradient">Touch</span>
+              Kontakta <span className="text-gradient">Oss</span>
             </h1>
             <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-              We&apos;d love to hear from you. Reach out and let&apos;s discuss
-              your project.
+              Vi vill gärna höra från dig. Hör av dig så diskuterar vi ditt
+              projekt.
             </p>
           </motion.div>
         </div>
@@ -42,18 +42,15 @@ export default function ContactContent() {
       {/* Contact section */}
       <section className="py-8 md:py-20 px-6">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Form */}
           <AnimatedSection>
             <ContactForm />
           </AnimatedSection>
 
-          {/* Contact info + map */}
           <AnimatedSection delay={0.1}>
             <div className="space-y-6">
-              {/* Contact details */}
               <div className="glass-card rounded-2xl p-6 md:p-8 space-y-5">
                 <h3 className="font-heading text-xl font-semibold">
-                  Contact Information
+                  Kontaktinformation
                 </h3>
 
                 <a
@@ -64,10 +61,10 @@ export default function ContactContent() {
                     <Phone size={18} className="text-accent-primary" />
                   </div>
                   <div>
-                    <p className="text-xs text-text-secondary/70 mb-0.5">
-                      Phone
+                    <p className="text-sm text-text-secondary/70 mb-0.5">
+                      Telefon
                     </p>
-                    <p className="text-text-primary">+46 (0) 00 000 00 00</p>
+                    <p className="text-text-primary text-base">+46 (0) 00 000 00 00</p>
                   </div>
                 </a>
 
@@ -79,10 +76,10 @@ export default function ContactContent() {
                     <Mail size={18} className="text-accent-primary" />
                   </div>
                   <div>
-                    <p className="text-xs text-text-secondary/70 mb-0.5">
-                      Email
+                    <p className="text-sm text-text-secondary/70 mb-0.5">
+                      E-post
                     </p>
-                    <p className="text-text-primary">
+                    <p className="text-text-primary text-base">
                       info@specialplastning.se
                     </p>
                   </div>
@@ -93,10 +90,10 @@ export default function ContactContent() {
                     <MapPin size={18} className="text-accent-primary" />
                   </div>
                   <div>
-                    <p className="text-xs text-text-secondary/70 mb-0.5">
-                      Location
+                    <p className="text-sm text-text-secondary/70 mb-0.5">
+                      Plats
                     </p>
-                    <p className="text-text-primary">Marstrand, Sweden</p>
+                    <p className="text-text-primary text-base">Marstrand, Sverige</p>
                   </div>
                 </div>
 
@@ -105,20 +102,19 @@ export default function ContactContent() {
                     <Clock size={18} className="text-accent-primary" />
                   </div>
                   <div>
-                    <p className="text-xs text-text-secondary/70 mb-0.5">
-                      Business Hours
+                    <p className="text-sm text-text-secondary/70 mb-0.5">
+                      Öppettider
                     </p>
-                    <p className="text-text-primary">
-                      Mon–Fri: 08:00–17:00
+                    <p className="text-text-primary text-base">
+                      Mån–Fre: 08:00–17:00
                     </p>
                     <p className="text-text-secondary text-sm">
-                      Sat–Sun: By appointment
+                      Lör–Sön: Efter överenskommelse
                     </p>
                   </div>
                 </div>
               </div>
 
-              {/* Google Maps */}
               <div className="rounded-2xl overflow-hidden border border-glass-border">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8330.42!2d11.59!3d57.8884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464f883a5c86214d%3A0x4073b7c54d322c7c!2sMarstrand!5e0!3m2!1sen!2sse!4v1700000000000!5m2!1sen!2sse"
@@ -128,7 +124,7 @@ export default function ContactContent() {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Our location in Marstrand, Sweden"
+                  title="Vår plats i Marstrand, Sverige"
                 />
               </div>
             </div>

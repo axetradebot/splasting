@@ -72,16 +72,16 @@ export default function ContactForm() {
               />
             </motion.div>
             <h3 className="font-heading text-2xl font-bold mb-2">
-              Message Sent!
+              Meddelande Skickat!
             </h3>
-            <p className="text-text-secondary">
-              We&apos;ll get back to you within a few hours.
+            <p className="text-text-secondary text-base">
+              Vi återkommer inom ett par timmar.
             </p>
             <button
               onClick={() => setStatus("idle")}
               className="mt-6 text-accent-primary hover:underline text-sm"
             >
-              Send another message
+              Skicka ett nytt meddelande
             </button>
           </motion.div>
         ) : (
@@ -94,23 +94,23 @@ export default function ContactForm() {
             className="space-y-5"
           >
             <h3 className="font-heading text-xl font-semibold mb-2">
-              Send Us a Message
+              Skicka ett Meddelande
             </h3>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <FormInput
-                label="Name"
+                label="Namn"
                 name="name"
-                placeholder="Your name"
+                placeholder="Ditt namn"
                 required
                 value={form.name}
                 onChange={handleChange}
               />
               <FormInput
-                label="Email"
+                label="E-post"
                 name="email"
                 type="email"
-                placeholder="your@email.com"
+                placeholder="din@epost.se"
                 required
                 value={form.email}
                 onChange={handleChange}
@@ -119,7 +119,7 @@ export default function ContactForm() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <FormInput
-                label="Phone"
+                label="Telefon"
                 name="phone"
                 type="tel"
                 placeholder="+46 ..."
@@ -127,23 +127,23 @@ export default function ContactForm() {
                 onChange={handleChange}
               />
               <FormInput
-                label="Service Interest"
+                label="Tjänst"
                 name="service"
                 value={form.service}
                 onChange={handleChange}
                 options={[
-                  { value: "exterior", label: "Exterior Restoration" },
-                  { value: "interior", label: "Interior Restoration" },
-                  { value: "custom", label: "Custom Work" },
-                  { value: "other", label: "Other" },
+                  { value: "exterior", label: "Exteriör Restaurering" },
+                  { value: "interior", label: "Interiör Restaurering" },
+                  { value: "custom", label: "Specialarbeten" },
+                  { value: "other", label: "Annat" },
                 ]}
               />
             </div>
 
             <FormInput
-              label="Message"
+              label="Meddelande"
               name="message"
-              placeholder="Tell us about your project..."
+              placeholder="Berätta om ditt projekt..."
               required
               textarea
               rows={5}
@@ -158,7 +158,7 @@ export default function ContactForm() {
                 className="flex items-center gap-2 text-red-400 text-sm"
               >
                 <AlertCircle size={16} />
-                Something went wrong. Please try again.
+                Något gick fel. Vänligen försök igen.
               </motion.div>
             )}
 
@@ -172,7 +172,7 @@ export default function ContactForm() {
               ) : (
                 <>
                   <Send size={18} className="mr-2" />
-                  Send Message
+                  Skicka Meddelande
                 </>
               )}
             </Button>

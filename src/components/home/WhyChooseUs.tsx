@@ -8,27 +8,27 @@ import SectionHeading from "@/components/ui/SectionHeading";
 const features = [
   {
     icon: Palette,
-    title: "Master Craftsmen",
+    title: "Mästerliga Hantverkare",
     description:
-      "Years of hands-on boat restoration experience with meticulous attention to every detail.",
+      "Mångårig erfarenhet av båtrestaurering med noggrann omsorg om varje detalj.",
   },
   {
     icon: Coins,
-    title: "Honest Pricing",
+    title: "Ärlig Prissättning",
     description:
-      "Transparent quotes with no hidden fees. You know exactly what you're paying for.",
+      "Transparenta offerter utan dolda avgifter. Du vet alltid vad du betalar för.",
   },
   {
     icon: CalendarCheck,
-    title: "Easy Booking",
+    title: "Enkel Bokning",
     description:
-      "Get a detailed quote and schedule your restoration in just minutes.",
+      "Få en detaljerad offert och boka din restaurering på bara några minuter.",
   },
   {
     icon: CircleCheckBig,
-    title: "Guaranteed Results",
+    title: "Garanterade Resultat",
     description:
-      "We stand behind every job with our satisfaction guarantee. Your boat deserves the best.",
+      "Vi står bakom varje jobb med vår nöjdhetsgaranti. Din båt förtjänar det bästa.",
   },
 ];
 
@@ -53,9 +53,9 @@ export default function WhyChooseUs() {
     <section className="py-20 md:py-28 px-6">
       <div className="max-w-6xl mx-auto">
         <SectionHeading
-          title="Why Choose Us"
-          highlight="Choose"
-          subtitle="We combine traditional craftsmanship with modern techniques to deliver exceptional results every time."
+          title="Varför Välja Oss"
+          highlight="Välja"
+          subtitle="Vi kombinerar traditionellt hantverk med moderna tekniker för att leverera exceptionella resultat varje gång."
         />
 
         <motion.div
@@ -68,24 +68,16 @@ export default function WhyChooseUs() {
           {features.map((feature) => (
             <motion.div key={feature.title} variants={itemVariants}>
               <Card className="h-full text-center">
-                <motion.div
-                  className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-accent-primary/10 mb-4"
-                  animate={{ scale: [1, 1.05, 1] }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                >
+                <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-accent-primary/10 mb-4">
                   <feature.icon
                     size={26}
                     className="text-accent-primary"
                   />
-                </motion.div>
+                </div>
                 <h3 className="font-heading font-semibold text-lg mb-2">
                   {feature.title}
                 </h3>
-                <p className="text-text-secondary text-sm leading-relaxed">
+                <p className="text-text-secondary text-base leading-relaxed">
                   {feature.description}
                 </p>
               </Card>
