@@ -110,7 +110,7 @@ function GlowOrb({
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-start md:items-center justify-center overflow-hidden">
+    <section className="relative h-[100svh] flex flex-col overflow-hidden">
       {/* === BACKGROUND LAYERS === */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 animate-ken-burns">
@@ -149,14 +149,14 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-t from-bg-primary via-transparent to-bg-primary/30" />
       </div>
 
-      {/* === CONTENT === */}
-      <div className="relative z-10 max-w-5xl mx-auto px-5 text-center pt-8 md:pt-20">
+      {/* === CONTENT — fills available space, centered === */}
+      <div className="relative z-10 flex-1 flex flex-col items-center justify-center max-w-5xl mx-auto px-5 text-center pb-20 md:pb-0">
         {/* Logo — mobile only */}
         <motion.div
           initial={{ opacity: 0, scale: 0.5, filter: "blur(20px)" }}
           animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
           transition={{ delay: 0, duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-          className="flex justify-center mb-3 md:hidden"
+          className="mb-3 md:hidden"
         >
           <motion.div
             animate={{
@@ -172,8 +172,8 @@ export default function Hero() {
             <Image
               src="/images/logo.jpg"
               alt="Special Plastning & Målning Västkusten"
-              width={110}
-              height={110}
+              width={100}
+              height={100}
               priority
               className="rounded-2xl"
             />
@@ -185,7 +185,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.3, duration: 0.5 }}
-          className="mb-4 md:mb-6"
+          className="mb-3 md:mb-6"
         >
           <span className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full glass-card text-text-secondary text-xs md:text-base tracking-wider uppercase">
             🇸🇪 Sveriges Pålitliga Båtrestaureringsspecialister
@@ -193,7 +193,7 @@ export default function Hero() {
         </motion.div>
 
         {/* Main headline */}
-        <h1 className="font-heading text-3xl md:text-6xl lg:text-7xl font-bold leading-tight mb-4 md:mb-6">
+        <h1 className="font-heading text-[1.7rem] md:text-6xl lg:text-7xl font-bold leading-tight mb-3 md:mb-6">
           {words.map((word, i) => {
             const isHighlight =
               word === "Special" || word === "Plastning" || word === "Målning";
@@ -254,7 +254,7 @@ export default function Hero() {
           Din pålitliga partner för
         </motion.p>
 
-        <div className="flex flex-wrap items-center justify-center gap-1.5 md:gap-3 mb-6 md:mb-10">
+        <div className="flex flex-wrap items-center justify-center gap-1.5 md:gap-3 mb-5 md:mb-10">
           {services.map((service, i) => (
             <motion.span
               key={service}
@@ -277,7 +277,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.6, duration: 0.5 }}
-          className="flex flex-row items-center justify-center gap-3 mb-6 md:mb-10"
+          className="flex flex-row items-center justify-center gap-3 mb-5 md:mb-10"
         >
           <Button href="/quote" size="sm" breathe className="text-sm px-5 py-3 sm:px-9 sm:py-4 sm:text-lg">
             Begär Gratis Offert
@@ -292,7 +292,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.9, duration: 0.5 }}
-          className="grid grid-cols-2 gap-x-4 gap-y-2 md:flex md:flex-wrap md:items-center md:justify-center md:gap-8 max-w-xs md:max-w-none mx-auto"
+          className="grid grid-cols-2 gap-x-4 gap-y-1.5 md:flex md:flex-wrap md:items-center md:justify-center md:gap-8 max-w-xs md:max-w-none mx-auto"
         >
           {trustBadges.map((badge, i) => (
             <motion.div
@@ -309,7 +309,7 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* === SCROLL INDICATOR — desktop only === */}
+      {/* === SCROLL INDICATOR — visible on all screens === */}
       <motion.button
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -317,7 +317,7 @@ export default function Hero() {
         onClick={() =>
           window.scrollTo({ top: window.innerHeight, behavior: "smooth" })
         }
-        className="hidden md:flex absolute bottom-12 left-1/2 -translate-x-1/2 flex-col items-center gap-2 cursor-pointer"
+        className="relative z-10 flex flex-col items-center gap-1 pb-20 md:pb-8 cursor-pointer"
         aria-label="Scrolla ner"
       >
         <motion.span
@@ -328,10 +328,10 @@ export default function Hero() {
           Scroll
         </motion.span>
         <motion.div
-          animate={{ y: [0, 8, 0] }}
+          animate={{ y: [0, 6, 0] }}
           transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
         >
-          <ChevronDown size={24} className="text-accent-primary/50" />
+          <ChevronDown size={20} className="text-accent-primary/50" />
         </motion.div>
       </motion.button>
 
