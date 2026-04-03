@@ -162,7 +162,7 @@ export default function Hero() {
       </div>
 
       {/* === CONTENT === */}
-      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center pt-20">
+      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center pt-6 md:pt-20">
         {/* Logo — animates in FIRST */}
         <motion.div
           initial={{ opacity: 0, scale: 0.5, filter: "blur(20px)" }}
@@ -188,8 +188,8 @@ export default function Hero() {
             <Image
               src="/images/logo.jpg"
               alt="Special Plastning & Målning Västkusten"
-              width={100}
-              height={100}
+              width={140}
+              height={140}
               priority
               className="rounded-2xl"
             />

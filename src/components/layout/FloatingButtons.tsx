@@ -26,27 +26,6 @@ export default function FloatingButtons() {
       >
         <Phone size={22} />
       </motion.a>
-
-      {/* Book Now button — bottom right */}
-      <motion.a
-        href="/quote"
-        className="fixed right-4 bottom-24 flex items-center justify-center px-4 py-3 rounded-full accent-gradient-bg text-white text-sm font-heading font-semibold shadow-lg glow-blue backdrop-blur-sm whitespace-nowrap"
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.9 }}
-        animate={{
-          y: [0, -4, 0],
-        }}
-        transition={{
-          y: {
-            duration: 3,
-            repeat: Infinity,
-            ease: "easeInOut",
-          },
-        }}
-        aria-label="Book now - get a quote"
-      >
-        Book Now
-      </motion.a>
     </div>
   );
 }
