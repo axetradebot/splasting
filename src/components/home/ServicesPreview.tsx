@@ -78,7 +78,7 @@ export default function ServicesPreview() {
                         className="text-white/30"
                       />
                     </div>
-                    <div className="absolute bottom-0 inset-x-0 h-20 bg-gradient-to-t from-bg-primary/80 to-transparent" />
+                    <div className="absolute bottom-0 inset-x-0 h-20 bg-gradient-to-t from-black/30 to-transparent" />
                     <div className="absolute bottom-3 left-4 flex flex-wrap gap-2">
                       {service.tags.map((tag) => (
                         <span

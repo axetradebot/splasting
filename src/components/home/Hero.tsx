@@ -110,7 +110,7 @@ function GlowOrb({
 
 export default function Hero() {
   return (
-    <section className="relative h-[100svh] flex flex-col overflow-hidden">
+    <section className="relative h-[100svh] flex flex-col overflow-hidden hero-dark">
       {/* === BACKGROUND LAYERS === */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 animate-ken-burns">
@@ -283,7 +283,7 @@ export default function Hero() {
           <Button href="/quote" size="sm" breathe className="text-base px-7 py-4 sm:px-9 sm:py-4 sm:text-lg">
             Begär Gratis Offert
           </Button>
-          <Button href="/services" variant="ghost" size="sm" className="text-base px-7 py-4 sm:px-9 sm:py-4 sm:text-lg">
+          <Button href="/services" variant="ghost" size="sm" className="text-base px-7 py-4 sm:px-9 sm:py-4 sm:text-lg !border-white/20 !text-white hover:!bg-white/10">
             Våra Tjänster
           </Button>
         </motion.div>
@@ -336,7 +336,7 @@ export default function Hero() {
         </motion.div>
       </motion.button>
 
-      <div className="absolute inset-0 pointer-events-none shadow-[inset_0_0_150px_rgba(0,0,0,0.6)]" />
+      <div className="absolute inset-0 pointer-events-none shadow-[inset_0_0_120px_rgba(0,0,0,0.5)]" />
     </section>
   );
 }

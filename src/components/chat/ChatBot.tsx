@@ -95,7 +95,7 @@ export default function ChatBot({
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="md:hidden absolute inset-0 bg-black/50 backdrop-blur-sm"
+        className="md:hidden absolute inset-0 bg-black/20 backdrop-blur-sm"
         onClick={onClose}
         style={{ pointerEvents: "auto" }}
       />
@@ -105,7 +105,7 @@ export default function ChatBot({
         initial={{ opacity: 0, y: 60, scale: 0.95 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ type: "spring" as const, stiffness: 300, damping: 25 }}
-        className="absolute bottom-20 left-2 right-2 md:bottom-6 md:right-6 md:left-auto md:w-[400px] rounded-2xl overflow-hidden flex flex-col bg-bg-secondary border border-glass-border shadow-2xl shadow-black/40"
+        className="absolute bottom-20 left-2 right-2 md:bottom-6 md:right-6 md:left-auto md:w-[400px] rounded-2xl overflow-hidden flex flex-col bg-white border border-slate-200 shadow-2xl shadow-slate-300/50"
         style={{
           pointerEvents: "auto",
           maxHeight: "min(70vh, 550px)",
@@ -113,7 +113,7 @@ export default function ChatBot({
         }}
       >
         {/* Header */}
-        <div className="flex items-center justify-between px-5 py-4 border-b border-glass-border bg-bg-elevated/50 flex-shrink-0">
+          <div className="flex items-center justify-between px-5 py-4 border-b border-slate-200 bg-slate-50 flex-shrink-0">
           <div className="flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl overflow-hidden flex-shrink-0">
               <Image
@@ -138,7 +138,7 @@ export default function ChatBot({
           </div>
           <button
             onClick={onClose}
-            className="w-8 h-8 rounded-lg flex items-center justify-center text-text-secondary hover:text-text-primary hover:bg-white/5 transition-colors"
+            className="w-8 h-8 rounded-lg flex items-center justify-center text-text-secondary hover:text-text-primary hover:bg-slate-100 transition-colors"
             aria-label="Stäng chatt"
           >
             <X size={18} />
@@ -167,7 +167,7 @@ export default function ChatBot({
                 className={`max-w-[80%] rounded-2xl px-4 py-3 text-sm leading-relaxed whitespace-pre-line ${
                   msg.role === "user"
                     ? "accent-gradient-bg text-white rounded-br-md"
-                    : "bg-bg-elevated text-text-primary rounded-bl-md border border-glass-border"
+                    : "bg-slate-100 text-text-primary rounded-bl-md border border-slate-200"
                 }`}
               >
                 {msg.content}
@@ -187,7 +187,7 @@ export default function ChatBot({
                 <div className="w-7 h-7 rounded-lg bg-accent-primary/10 flex items-center justify-center mr-2 mt-1 flex-shrink-0">
                   <MessageCircle size={14} className="text-accent-primary" />
                 </div>
-                <div className="bg-bg-elevated rounded-2xl rounded-bl-md px-4 py-3 border border-glass-border">
+                <div className="bg-slate-100 rounded-2xl rounded-bl-md px-4 py-3 border border-slate-200">
                   <div className="flex items-center gap-1.5">
                     <motion.span
                       className="w-2 h-2 rounded-full bg-accent-primary/60"
@@ -214,7 +214,7 @@ export default function ChatBot({
         {/* Input */}
         <form
           onSubmit={handleSubmit}
-          className="px-4 py-3 border-t border-glass-border bg-bg-elevated/30 flex-shrink-0"
+          className="px-4 py-3 border-t border-slate-200 bg-slate-50 flex-shrink-0"
         >
           <div className="flex items-center gap-2">
             <input
@@ -223,7 +223,7 @@ export default function ChatBot({
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder="Skriv ett meddelande..."
-              className="flex-1 bg-bg-elevated border border-glass-border rounded-xl px-4 py-2.5 text-sm text-text-primary placeholder:text-text-secondary/50 focus:outline-none focus:border-accent-primary/40 transition-colors"
+              className="flex-1 bg-white border border-slate-200 rounded-xl px-4 py-2.5 text-sm text-text-primary placeholder:text-text-secondary/50 focus:outline-none focus:border-accent-primary/40 transition-colors"
               aria-label="Chattmeddelande"
             />
             <button

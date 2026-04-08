@@ -41,8 +41,8 @@ export default function Button({
     primary:
       "accent-gradient-bg text-white shadow-lg shadow-accent-primary/20 hover:shadow-accent-primary/40",
     ghost:
-      "border border-white/20 text-white hover:bg-white/5 hover:border-white/40",
-    warm: "bg-accent-warm text-bg-primary shadow-lg shadow-accent-warm/20 hover:shadow-accent-warm/40",
+      "border border-slate-300 text-text-primary hover:bg-slate-50 hover:border-slate-400",
+    warm: "bg-accent-warm text-white shadow-lg shadow-accent-warm/20 hover:shadow-accent-warm/40",
   };
 
   const combinedClassName = `${baseStyles} ${sizeStyles[size]} ${variantStyles[variant]} ${breathe ? "animate-breathe" : ""} ${className}`;

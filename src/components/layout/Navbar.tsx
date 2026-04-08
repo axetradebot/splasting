@@ -40,7 +40,7 @@ export default function Navbar() {
             initial={{ y: -40 }}
             animate={{ y: 0 }}
             exit={{ y: -40 }}
-            className="hidden md:block fixed top-0 left-0 right-0 z-50 bg-bg-secondary/80 backdrop-blur-md border-b border-glass-border"
+            className="hidden md:block fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200"
           >
             <div className="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between text-sm text-text-secondary">
               <div className="flex items-center gap-6">
@@ -71,10 +71,10 @@ export default function Navbar() {
       <motion.nav
         className={`hidden md:block fixed left-0 right-0 z-40 transition-all duration-300 ${
           scrolled
-            ? "top-0 bg-bg-primary/90 backdrop-blur-xl border-b border-glass-border shadow-lg shadow-black/20"
+            ? "top-0 bg-white/90 backdrop-blur-xl border-b border-slate-200 shadow-sm"
             : topBarVisible
-              ? "top-10 bg-transparent"
-              : "top-0 bg-bg-primary/90 backdrop-blur-xl border-b border-glass-border shadow-lg shadow-black/20"
+              ? "top-10 bg-white/70 backdrop-blur-lg"
+              : "top-0 bg-white/90 backdrop-blur-xl border-b border-slate-200 shadow-sm"
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">

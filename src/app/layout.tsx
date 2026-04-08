@@ -80,7 +80,7 @@ export default function RootLayout({
     <html
       lang="sv"
       className={`${dmSans.variable} ${outfit.variable}`}
-      style={{ backgroundColor: "#0a0f1a" }}
+      style={{ backgroundColor: "#ffffff" }}
     >
       <head>
         <script

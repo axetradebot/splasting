@@ -125,7 +125,7 @@ export default function GalleryContent() {
                   </div>
 
                   {/* Title + View button overlay — always visible on mobile */}
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent p-4 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent p-4 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
                     <p className="text-white font-heading font-semibold text-sm mb-2">
                       {item.title}
                     </p>

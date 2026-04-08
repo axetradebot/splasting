@@ -7,7 +7,6 @@ import {
   Shield,
   ChevronRight,
   CheckCircle2,
-  Phone,
 } from "lucide-react";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import Button from "@/components/ui/Button";
@@ -175,21 +174,6 @@ export default function ServicesContent() {
         </div>
       </section>
 
-      {/* Sticky bottom CTA — mobile only */}
-      <div className="md:hidden fixed bottom-16 left-0 right-0 z-30 px-3 pb-2 safe-bottom">
-        <div className="flex items-center gap-2 glass-card-strong rounded-xl p-2">
-          <Button href="/quote" size="sm" className="flex-1 text-sm py-3 justify-center">
-            Begär Offert
-          </Button>
-          <a
-            href="tel:+46000000000"
-            className="flex items-center justify-center gap-2 flex-1 text-sm py-3 rounded-xl bg-bg-elevated border border-glass-border text-text-primary font-heading font-semibold"
-          >
-            <Phone size={16} className="text-accent-primary" />
-            Ring Oss
-          </a>
-        </div>
-      </div>
     </>
   );
 }

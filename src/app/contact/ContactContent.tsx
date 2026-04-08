@@ -120,7 +120,7 @@ export default function ContactContent() {
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8330.42!2d11.59!3d57.8884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464f883a5c86214d%3A0x4073b7c54d322c7c!2sMarstrand!5e0!3m2!1sen!2sse!4v1700000000000!5m2!1sen!2sse"
                   width="100%"
                   height="280"
-                  style={{ border: 0, filter: "invert(90%) hue-rotate(180deg)" }}
+                  style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"

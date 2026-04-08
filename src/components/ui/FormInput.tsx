@@ -30,7 +30,7 @@ export default function FormInput({
   rows = 4,
 }: FormInputProps) {
   const inputStyles =
-    "w-full bg-bg-elevated border border-glass-border rounded-xl px-4 py-3.5 text-base text-text-primary placeholder:text-text-secondary/50 focus:outline-none focus:border-accent-primary/50 focus:ring-1 focus:ring-accent-primary/20 transition-all duration-300";
+    "w-full bg-white border border-slate-200 rounded-xl px-4 py-3.5 text-base text-text-primary placeholder:text-slate-400 focus:outline-none focus:border-accent-primary/50 focus:ring-1 focus:ring-accent-primary/20 transition-all duration-300 shadow-sm";
 
   return (
     <div className="space-y-2">
