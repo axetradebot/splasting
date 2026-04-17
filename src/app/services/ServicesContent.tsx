@@ -11,6 +11,7 @@ import {
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import Button from "@/components/ui/Button";
 import SectionHeading from "@/components/ui/SectionHeading";
+import Image from "next/image";
 import Link from "next/link";
 
 const services = [
@@ -20,7 +21,8 @@ const services = [
     title: "Exteriör Restaurering",
     description:
       "Ge din båts exteriör nytt liv med vår heltäckande restaureringsprocess. Från skrovreparation till showroom-kvalitet.",
-    gradient: "from-sky-500/20 to-blue-600/20",
+    image:
+      "/images/special_plastning_1759043440_3731449288560506059_68356511885.jpg",
     features: [
       "Skrovrengöring och förberedelse",
       "Gelcoat-reparation och restaurering",
@@ -34,7 +36,8 @@ const services = [
     title: "Interiör Restaurering",
     description:
       "Förvandla din båts interiör med professionell spackling, klädselarbete och noggrann renovering. Vi gör kajutan som ny.",
-    gradient: "from-cyan-500/20 to-teal-600/20",
+    image:
+      "/images/special_plastning_1726561199_3458968500960888356_68356511885.jpg",
     features: [
       "Spackling och ytbehandling",
       "Interiörmålning och finish",
@@ -49,7 +52,8 @@ const services = [
     title: "Specialarbeten",
     description:
       "Har du något specifikt i åtanke? Vi specialiserar oss på skräddarsydda modifikationer och specialfinish som förverkligar din vision.",
-    gradient: "from-amber-500/20 to-orange-600/20",
+    image:
+      "/images/special_plastning_1726561199_3458968500960872617_68356511885.jpg",
     features: [
       "Skräddarsydd designkonsultation",
       "Speciallackering och finish",
@@ -108,10 +112,21 @@ export default function ServicesContent() {
               <AnimatedSection
                 className={index % 2 === 1 ? "md:order-2" : ""}
               >
-                <div
-                  className={`aspect-[4/3] rounded-2xl bg-gradient-to-br ${service.gradient} flex items-center justify-center`}
-                >
-                  <service.icon size={80} className="text-white/20" />
+                <div className="group relative aspect-[4/3] rounded-2xl overflow-hidden bg-slate-100 shadow-lg shadow-slate-300/50 border border-slate-200">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-tr from-black/30 via-transparent to-transparent" />
+                  <div className="absolute top-4 left-4 w-12 h-12 rounded-xl bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-md">
+                    <service.icon
+                      size={22}
+                      className="text-accent-primary"
+                    />
+                  </div>
                 </div>
               </AnimatedSection>
 

@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Shield, Sun, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import SectionHeading from "@/components/ui/SectionHeading";
 
@@ -11,24 +12,24 @@ const services = [
     description:
       "Skrovreparation, gelcoat-restaurering, professionell polering och bottenmålning som skyddar och förskönar.",
     tags: ["UV-Skydd", "Gelcoat", "Bottenmålning"],
-    icon: Sun,
-    gradient: "from-sky-500/20 to-blue-600/20",
+    image:
+      "/images/special_plastning_1759043440_3731449288560506059_68356511885.jpg",
   },
   {
     title: "Interiör Restaurering",
     description:
       "Komplett interiör renovering — klädsel, spackling, träarbeten och detaljarbete för att ge din kajuta nytt liv.",
     tags: ["Klädsel", "Spackling", "Renovering"],
-    icon: Sparkles,
-    gradient: "from-cyan-500/20 to-teal-600/20",
+    image:
+      "/images/special_plastning_1726561199_3458968500960888356_68356511885.jpg",
   },
   {
     title: "Specialarbeten",
     description:
       "Skräddarsydda modifikationer och specialfinish efter din vision. Från idé till färdigt resultat.",
     tags: ["Skräddarsytt", "Specialfinish", "Modifikationer"],
-    icon: Shield,
-    gradient: "from-amber-500/20 to-orange-600/20",
+    image:
+      "/images/special_plastning_1726561199_3458968500960872617_68356511885.jpg",
   },
 ];
 
@@ -69,21 +70,20 @@ export default function ServicesPreview() {
             <motion.div key={service.title} variants={cardVariants}>
               <Link href="/services" className="block group">
                 <div className="glass-card rounded-2xl overflow-hidden h-full">
-                  <div
-                    className={`relative h-48 md:h-56 bg-gradient-to-br ${service.gradient}`}
-                  >
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <service.icon
-                        size={48}
-                        className="text-white/30"
-                      />
-                    </div>
-                    <div className="absolute bottom-0 inset-x-0 h-20 bg-gradient-to-t from-black/30 to-transparent" />
-                    <div className="absolute bottom-3 left-4 flex flex-wrap gap-2">
+                  <div className="relative h-48 md:h-56 overflow-hidden bg-slate-100">
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                    <div className="absolute bottom-3 left-4 right-4 flex flex-wrap gap-2">
                       {service.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="text-sm px-2.5 py-1 rounded-full bg-white/10 backdrop-blur-sm text-white/90 border border-white/10"
+                          className="text-sm px-2.5 py-1 rounded-full bg-white/15 backdrop-blur-sm text-white border border-white/20 font-medium"
                         >
                           {tag}
                         </span>

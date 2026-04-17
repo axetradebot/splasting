@@ -139,7 +139,7 @@ export default function QuoteContent() {
       ? parseFloat(hullLength) *
         (parseFloat(hullWidth) + 2 * parseFloat(hullHeight))
       : 0;
-  const epoxyBasePrice = Math.round(hullArea * 1100);
+  const epoxyBasePrice = Math.round(hullArea * 900);
   const warrantyCost = addWarranty ? Math.round(epoxyBasePrice * 0.05) : 0;
   const epoxyTotalPrice = epoxyBasePrice + warrantyCost;
 
@@ -638,10 +638,10 @@ export default function QuoteContent() {
                                 : "text-text-primary"
                             }`}
                           >
-                            Epoxilackering
+                            Epoxi
                           </span>
                           <span className="text-text-secondary text-sm">
-                            1 100 SEK per m² (inkl. moms)
+                            900 SEK per m² (inkl. moms)
                           </span>
                         </motion.button>
                       </div>
@@ -1009,7 +1009,7 @@ export default function QuoteContent() {
                             <span className="font-semibold text-text-primary">
                               {calcService === "polishing"
                                 ? "Polering & Vaxning"
-                                : "Epoxilackering"}
+                                : "Epoxi"}
                             </span>
                           </div>
 
@@ -1037,7 +1037,7 @@ export default function QuoteContent() {
                                   Skrovyta
                                 </span>
                                 <span className="font-semibold text-text-primary">
-                                  {hullArea.toFixed(1)} m² × 1 100 SEK
+                                  {hullArea.toFixed(1)} m² × 900 SEK
                                 </span>
                               </div>
                             </>
