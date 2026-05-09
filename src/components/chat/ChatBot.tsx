@@ -4,6 +4,7 @@ import { useState, useRef, useEffect, FormEvent } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Send, MessageCircle, Loader2 } from "lucide-react";
 import Image from "next/image";
+import { CONTACT } from "@/config/contact";
 
 interface Message {
   id: string;
@@ -11,16 +12,18 @@ interface Message {
   content: string;
 }
 
+// Reserved for future AI API integration — keeps business facts in one place
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const BUSINESS_CONTEXT = `Du är kundtjänst-assistenten för Special Plastning & Målning Västkusten, ett premium båtrestaureringsföretag baserat i Marstrand, Sverige. Du hjälper kunder med frågor om tjänster, bokning, priser och allmänna frågor.
 
 Viktig företagsinformation:
+- Kontakt: ${CONTACT.contactName}
 - Tjänster: Exteriör restaurering (skrovreparation, gelcoat, polering, bottenmålning), Interiör restaurering (spackling, klädsel, renovering, detaljarbete), Specialarbeten (skräddarsydda modifikationer, specialfinish), Plastskadereparation, Underhåll, Blästring, Epoxi behandling, Swimmingpool
 - Plats: Marstrand, Svenska Västkusten
 - Serviceområde: Marstrand, Göteborg, Kungälv, Stenungsund, Tjörn, Orust och hela Svenska Västkusten
 - Öppettider: Mån-Fre 08:00-17:00, Lör-Sön efter överenskommelse
-- Telefon: +46 (0) 00 000 00 00
-- E-post: info@specialplastning.se
+- Telefon: ${CONTACT.phoneDisplay}
+- E-post: ${CONTACT.email}
 - Gratis offerter, svarstid i snitt 2 timmar
 - 5-stjärnigt betyg, nöjdhetsgaranti
 
@@ -276,5 +279,11 @@ function getPlaceholderResponse(input: string): string {
     return "Tack själv! 😊 Glad att kunna hjälpa. Tveka inte att höra av dig — jag finns här dygnet runt. Ha en fin dag!";
   }
 
-  return "Tack för ditt meddelande! Jag hjälper dig gärna med det. För snabbast svar rekommenderar jag:\n\n📞 Ring oss: +46 (0) 00 000 00 00\n📧 E-post: info@specialplastning.se\n📋 Eller begär offert på /quote\n\nFinns det något specifikt om våra tjänster jag kan förtydliga?";
+  return `Tack för ditt meddelande! Jag hjälper dig gärna med det. För snabbast svar rekommenderar jag:
+
+📞 Ring oss: ${CONTACT.phoneDisplay}
+📧 E-post: ${CONTACT.email}
+📋 Eller begär offert på /quote
+
+Finns det något specifikt om våra tjänster jag kan förtydliga?`;
 }

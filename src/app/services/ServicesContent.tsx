@@ -2,63 +2,102 @@
 
 import { motion } from "framer-motion";
 import {
-  Sun,
   Sparkles,
+  Layers,
+  Paintbrush,
+  Trees,
   Shield,
   ChevronRight,
   CheckCircle2,
+  Info,
 } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import Button from "@/components/ui/Button";
 import SectionHeading from "@/components/ui/SectionHeading";
-import Image from "next/image";
-import Link from "next/link";
 
-const services = [
+type Service = {
+  id: string;
+  icon: typeof Sparkles;
+  title: string;
+  description: string;
+  image: string;
+  disclaimer?: string;
+  highlights?: string[];
+};
+
+const services: Service[] = [
   {
-    id: "exterior",
-    icon: Sun,
-    title: "Exteriör Restaurering",
+    id: "polering",
+    icon: Sparkles,
+    title: "Polering & Vaxning",
     description:
-      "Ge din båts exteriör nytt liv med vår heltäckande restaureringsprocess. Från skrovreparation till showroom-kvalitet.",
+      "Ge din båt ett lyft du verkligen ser skillnad på. Med vår 3-stegspolering och skyddande vaxning återfår båten sin djupa glans och ett långvarigt skydd mot väder och slitage.",
+    image:
+      "/images/special_plastning_1729589628_3484372805142370507_68356511885.jpg",
+    highlights: [
+      "3-stegspolering för djup glans",
+      "Skyddande vaxning",
+      "Skydd mot väder och slitage",
+    ],
+  },
+  {
+    id: "epoxi",
+    icon: Layers,
+    title: "Epoxibehandling",
+    description:
+      "Skydda din investering på riktigt. Vi bygger upp, slipar och behandlar din båtbotten med epoxi i flera lager för ett starkt, hållbart och professionellt resultat.",
+    disclaimer:
+      "Skrapning eller blästring ingår ej och bokas separat vid behov.",
     image:
       "/images/special_plastning_1759043440_3731449288560506059_68356511885.jpg",
-    features: [
-      "Skrovrengöring och förberedelse",
-      "Gelcoat-reparation och restaurering",
-      "Maskinpolering till spegelblank yta",
-      "Bottenmålning och UV-skydd",
+    highlights: [
+      "Uppbyggnad och slipning",
+      "Flerlagers epoxi på båtbotten",
+      "Starkt och långsiktigt skydd",
     ],
   },
   {
-    id: "interior",
-    icon: Sparkles,
-    title: "Interiör Restaurering",
+    id: "gelcoat",
+    icon: Paintbrush,
+    title: "Gelcoat-reparation",
     description:
-      "Förvandla din båts interiör med professionell spackling, klädselarbete och noggrann renovering. Vi gör kajutan som ny.",
+      "Skador händer – vi fixar dem. Med noggrann färgmatchning och hög precision återställer vi ytan så att båten ser ut som ny igen.",
     image:
-      "/images/special_plastning_1726561199_3458968500960888356_68356511885.jpg",
-    features: [
-      "Spackling och ytbehandling",
-      "Interiörmålning och finish",
-      "Träarbeten och restaurering",
-      "Klädsel — reparation och byte",
-      "Detaljrengöring och skydd",
+      "/images/special_plastning_1759411459_3734536459605562494_68356511885.jpg",
+    highlights: [
+      "Noggrann färgmatchning",
+      "Precision återställning av ytan",
+      "Resultat som känns som nytt",
     ],
   },
   {
-    id: "custom",
+    id: "teak",
+    icon: Trees,
+    title: "Teaktvätt",
+    description:
+      "Ge din teak nytt liv. Vår tvåstegsbehandling rengör på djupet och lyfter fram träets naturliga lyster – med möjlighet till skyddande efterbehandling.",
+    image:
+      "/images/special_plastning_1730359307_3490829337874861622_68356511885.jpg",
+    highlights: [
+      "Tvåstegsbehandling på djupet",
+      "Träets naturliga lyster",
+      "Valfri skyddande efterbehandling",
+    ],
+  },
+  {
+    id: "special",
     icon: Shield,
     title: "Specialarbeten",
     description:
-      "Har du något specifikt i åtanke? Vi specialiserar oss på skräddarsydda modifikationer och specialfinish som förverkligar din vision.",
+      "Har du något utöver det vanliga i åtanke? Vi gillar utmaningar – hör av dig så hittar vi en lösning.",
     image:
       "/images/special_plastning_1726561199_3458968500960872617_68356511885.jpg",
-    features: [
-      "Skräddarsydd designkonsultation",
-      "Speciallackering och finish",
-      "Strukturella modifikationer",
-      "Färgmatchning och specialblandning",
+    highlights: [
+      "Skräddarsydda lösningar",
+      "Utmaningar välkomna",
+      "Konsultation och genomförande",
     ],
   },
 ];
@@ -89,8 +128,8 @@ export default function ServicesContent() {
               Våra <span className="text-gradient">Tjänster</span>
             </h1>
             <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-              Från köl till mast — heltäckande restaureringstjänster anpassade
-              efter ditt fartygs behov.
+              Polering, epoxi, gelcoat, teak och specialarbeten — hantverk
+              anpassat efter din båt.
             </p>
           </motion.div>
         </div>
@@ -150,20 +189,35 @@ export default function ServicesContent() {
                   {service.description}
                 </p>
 
-                <ul className="space-y-3 mb-8">
-                  {service.features.map((feature) => (
-                    <li
-                      key={feature}
-                      className="flex items-center gap-3 text-text-secondary text-base"
-                    >
-                      <CheckCircle2
-                        size={18}
-                        className="text-accent-primary flex-shrink-0"
-                      />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
+                {service.disclaimer && (
+                  <div className="flex gap-3 p-4 mb-6 rounded-xl bg-amber-50 border border-amber-200/80 text-amber-950 text-sm leading-relaxed">
+                    <Info
+                      size={20}
+                      className="text-amber-600 flex-shrink-0 mt-0.5"
+                    />
+                    <p>
+                      <span className="font-semibold">Observera: </span>
+                      {service.disclaimer}
+                    </p>
+                  </div>
+                )}
+
+                {service.highlights && service.highlights.length > 0 && (
+                  <ul className="space-y-3 mb-8">
+                    {service.highlights.map((item) => (
+                      <li
+                        key={item}
+                        className="flex items-center gap-3 text-text-secondary text-base"
+                      >
+                        <CheckCircle2
+                          size={18}
+                          className="text-accent-primary flex-shrink-0"
+                        />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
 
                 <Button href="/quote">Begär Offert</Button>
               </AnimatedSection>
@@ -188,7 +242,6 @@ export default function ServicesContent() {
           </Button>
         </div>
       </section>
-
     </>
   );
 }

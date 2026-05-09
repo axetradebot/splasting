@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Phone, MessageCircle } from "lucide-react";
 import ChatBot from "@/components/chat/ChatBot";
+import { CONTACT } from "@/config/contact";
 
 export default function FloatingButtons() {
   const [chatOpen, setChatOpen] = useState(false);
@@ -37,7 +38,7 @@ export default function FloatingButtons() {
       <div className="fixed z-40">
         {/* Phone button — bottom left, mobile only, pill with text */}
         <motion.a
-          href="tel:+46000000000"
+          href={`tel:${CONTACT.phoneTel}`}
           className="md:hidden fixed left-4 bottom-24 flex items-center gap-2 px-5 py-3.5 rounded-full accent-gradient-bg text-white shadow-lg glow-blue backdrop-blur-sm font-heading font-semibold text-sm"
           {...enterProps}
           whileHover={{ scale: 1.05 }}

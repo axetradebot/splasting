@@ -5,6 +5,7 @@ import Navbar from "@/components/layout/Navbar";
 import MobileTabBar from "@/components/layout/MobileTabBar";
 import FloatingButtons from "@/components/layout/FloatingButtons";
 import Footer from "@/components/layout/Footer";
+import { CONTACT } from "@/config/contact";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -60,8 +61,12 @@ export default function RootLayout({
     description:
       "Premium boat interior and exterior restoration in Marstrand, Sweden.",
     url: "https://specialplastning.se",
-    telephone: "+46000000000",
-    email: "info@specialplastning.se",
+    telephone: CONTACT.phoneTel,
+    email: CONTACT.email,
+    founder: {
+      "@type": "Person",
+      name: CONTACT.contactName,
+    },
     address: {
       "@type": "PostalAddress",
       addressLocality: "Marstrand",

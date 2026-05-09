@@ -6,6 +6,7 @@ import Link from "next/link";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import Card from "@/components/ui/Card";
 import Button from "@/components/ui/Button";
+import { CONTACT } from "@/config/contact";
 
 const values = [
   {
@@ -206,7 +207,7 @@ export default function AboutContent() {
             Begär Offert
           </Button>
           <a
-            href="tel:+46000000000"
+            href={`tel:${CONTACT.phoneTel}`}
             className="flex items-center justify-center gap-2 flex-1 text-sm py-3 rounded-xl bg-bg-elevated border border-glass-border text-text-primary font-heading font-semibold"
           >
             <Phone size={16} className="text-accent-primary" />

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Phone, Mail, MapPin } from "lucide-react";
+import { CONTACT } from "@/config/contact";
 
 const quickLinks = [
   { href: "/services", label: "Tjänster" },
@@ -67,20 +68,20 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="tel:+46000000000"
+                  href={`tel:${CONTACT.phoneTel}`}
                   className="flex items-center gap-3 text-slate-400 hover:text-sky-400 transition-colors text-base"
                 >
                   <Phone size={18} />
-                  +46 (0) 00 000 00 00
+                  {CONTACT.phoneDisplay}
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto:info@specialplastning.se"
+                  href={`mailto:${CONTACT.email}`}
                   className="flex items-center gap-3 text-slate-400 hover:text-sky-400 transition-colors text-base"
                 >
                   <Mail size={18} />
-                  info@specialplastning.se
+                  {CONTACT.email}
                 </a>
               </li>
               <li className="flex items-center gap-3 text-slate-400 text-base">

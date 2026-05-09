@@ -1,10 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ChevronRight, Phone, Mail, MapPin, Clock } from "lucide-react";
+import { ChevronRight, Phone, Mail, MapPin, Clock, User } from "lucide-react";
 import Link from "next/link";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import ContactForm from "@/components/forms/ContactForm";
+import { CONTACT } from "@/config/contact";
 
 export default function ContactContent() {
   return (
@@ -53,8 +54,22 @@ export default function ContactContent() {
                   Kontaktinformation
                 </h3>
 
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 rounded-xl bg-accent-primary/10 flex items-center justify-center">
+                    <User size={18} className="text-accent-primary" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-text-secondary/70 mb-0.5">
+                      Kontakt
+                    </p>
+                    <p className="text-text-primary text-base font-medium">
+                      {CONTACT.contactName}
+                    </p>
+                  </div>
+                </div>
+
                 <a
-                  href="tel:+46000000000"
+                  href={`tel:${CONTACT.phoneTel}`}
                   className="flex items-center gap-4 text-text-secondary hover:text-accent-primary transition-colors group"
                 >
                   <div className="w-10 h-10 rounded-xl bg-accent-primary/10 flex items-center justify-center group-hover:bg-accent-primary/20 transition-colors">
@@ -64,12 +79,14 @@ export default function ContactContent() {
                     <p className="text-sm text-text-secondary/70 mb-0.5">
                       Telefon
                     </p>
-                    <p className="text-text-primary text-base">+46 (0) 00 000 00 00</p>
+                    <p className="text-text-primary text-base">
+                      {CONTACT.phoneDisplay}
+                    </p>
                   </div>
                 </a>
 
                 <a
-                  href="mailto:info@specialplastning.se"
+                  href={`mailto:${CONTACT.email}`}
                   className="flex items-center gap-4 text-text-secondary hover:text-accent-primary transition-colors group"
                 >
                   <div className="w-10 h-10 rounded-xl bg-accent-primary/10 flex items-center justify-center group-hover:bg-accent-primary/20 transition-colors">
@@ -80,7 +97,7 @@ export default function ContactContent() {
                       E-post
                     </p>
                     <p className="text-text-primary text-base">
-                      info@specialplastning.se
+                      {CONTACT.email}
                     </p>
                   </div>
                 </a>

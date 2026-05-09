@@ -6,6 +6,7 @@ import { Phone, Mail } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import Button from "@/components/ui/Button";
+import { CONTACT } from "@/config/contact";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -45,20 +46,20 @@ export default function Navbar() {
             <div className="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between text-sm text-text-secondary">
               <div className="flex items-center gap-6">
                 <a
-                  href="tel:+46000000000"
+                  href={`tel:${CONTACT.phoneTel}`}
                   className="flex items-center gap-2 hover:text-accent-primary transition-colors"
                   aria-label="Ring oss"
                 >
                   <Phone size={14} />
-                  <span>+46 (0) 00 000 00 00</span>
+                  <span>{CONTACT.phoneDisplay}</span>
                 </a>
                 <a
-                  href="mailto:info@specialplastning.se"
+                  href={`mailto:${CONTACT.email}`}
                   className="flex items-center gap-2 hover:text-accent-primary transition-colors"
                   aria-label="Maila oss"
                 >
                   <Mail size={14} />
-                  <span>info@specialplastning.se</span>
+                  <span>{CONTACT.email}</span>
                 </a>
               </div>
               <span>🇸🇪 Marstrand, Sverige</span>

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Button from "@/components/ui/Button";
+import { CONTACT } from "@/config/contact";
 
 export default function CTABanner() {
   return (
@@ -64,7 +65,7 @@ export default function CTABanner() {
           <Button href="/quote" size="lg" breathe>
             Begär Gratis Offert
           </Button>
-          <Button href="tel:+46000000000" variant="ghost" size="lg">
+          <Button href={`tel:${CONTACT.phoneTel}`} variant="ghost" size="lg">
             Ring Oss Nu
           </Button>
         </motion.div>
