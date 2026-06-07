@@ -34,8 +34,7 @@ const services: Service[] = [
     title: "Polering & Vaxning",
     description:
       "Ge din båt ett lyft du verkligen ser skillnad på. Med vår 3-stegspolering och skyddande vaxning återfår båten sin djupa glans och ett långvarigt skydd mot väder och slitage.",
-    image:
-      "/images/special_plastning_1729589628_3484372805142370507_68356511885.jpg",
+    image: "/images/Polering%20%26%20vaxning/IMG-20260607-WA0020.jpg",
     highlights: [
       "3-stegspolering för djup glans",
       "Skyddande vaxning",
@@ -79,7 +78,7 @@ const services: Service[] = [
     description:
       "Ge din teak nytt liv. Vår tvåstegsbehandling rengör på djupet och lyfter fram träets naturliga lyster – med möjlighet till skyddande efterbehandling.",
     image:
-      "/images/special_plastning_1730359307_3490829337874861622_68356511885.jpg",
+      "/images/special_plastning_1729589628_3484372805142441003_68356511885.jpg",
     highlights: [
       "Tvåstegsbehandling på djupet",
       "Träets naturliga lyster",
@@ -93,7 +92,7 @@ const services: Service[] = [
     description:
       "Har du något utöver det vanliga i åtanke? Vi gillar utmaningar – hör av dig så hittar vi en lösning.",
     image:
-      "/images/special_plastning_1726561199_3458968500960872617_68356511885.jpg",
+      "/images/special_plastning_1729580756_3484298382251075200_68356511885.jpg",
     highlights: [
       "Skräddarsydda lösningar",
       "Utmaningar välkomna",
