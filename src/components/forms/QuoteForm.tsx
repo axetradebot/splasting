@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 import FormInput from "@/components/ui/FormInput";
 import Button from "@/components/ui/Button";
+import { FORMSPREE_ENDPOINT } from "@/config/contact";
 
 type FormStatus = "idle" | "loading" | "success" | "error";
 
@@ -30,9 +31,7 @@ export default function QuoteForm() {
     setStatus("loading");
 
     try {
-      const res = await fetch(
-        "https://formspree.io/f/QUOTE_FORM_ID" /* TODO: Replace with real Formspree ID */,
-        {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(form),

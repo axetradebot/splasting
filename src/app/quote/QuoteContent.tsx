@@ -21,6 +21,7 @@ import {
   Info,
 } from "lucide-react";
 import Link from "next/link";
+import { FORMSPREE_ENDPOINT } from "@/config/contact";
 
 type FormStatus = "idle" | "loading" | "success" | "error";
 type CalcService = "polishing" | "epoxy" | null;
@@ -159,9 +160,7 @@ export default function QuoteContent() {
     e.preventDefault();
     setStatus("loading");
     try {
-      const res = await fetch(
-        "https://formspree.io/f/QUOTE_FORM_ID" /* TODO: Replace with real Formspree ID */,
-        {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ ...form, service: selectedService }),
@@ -182,9 +181,7 @@ export default function QuoteContent() {
     e.preventDefault();
     setBookingStatus("loading");
     try {
-      const res = await fetch(
-        "https://formspree.io/f/QUOTE_FORM_ID" /* TODO: Replace with real Formspree ID */,
-        {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
