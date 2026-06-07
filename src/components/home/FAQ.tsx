@@ -8,7 +8,7 @@ import SectionHeading from "@/components/ui/SectionHeading";
 const faqs = [
   {
     q: "Vilka typer av båtar arbetar ni med?",
-    a: "Vi arbetar med alla typer av fartyg — segelbåtar, motorbåtar, klassiska träbåtar och moderna glasfiberskrov. Oavsett om det är en 20-fots dagskryssare eller en 60-fots yacht har vi erfarenheten och verktygen för att leverera exceptionella resultat.",
+    a: "Vi arbetar med alla typer av båt — segelbåtar, motorbåtar, klassiska träbåtar och moderna glasfiberskrov. Oavsett om det är en 20-fots dagskryssare eller en 60-fots yacht har vi erfarenheten och verktygen för att leverera exceptionella resultat.",
   },
   {
     q: "Hur lång tid tar en typisk restaurering?",

@@ -4,7 +4,7 @@ import AboutContent from "./AboutContent";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Learn about Special Plastning & Målning Västkusten — Marstrand's trusted boat restoration specialists. Our story, values, and commitment to craftsmanship.",
+    "Med över 10 års erfarenhet inom glasfiber- och träbåtsreparationer. Baserade i Göteborg och Klöverön, vi arbetar runt hela västkusten.",
 };
 
 export default function AboutPage() {

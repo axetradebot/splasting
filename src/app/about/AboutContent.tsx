@@ -19,7 +19,7 @@ const values = [
     icon: Handshake,
     title: "Integritet",
     description:
-      "Ärlig kommunikation, transparenta priser och genuint engagemang för varje kund och deras fartyg.",
+      "Ärlig kommunikation, transparenta priser och genuint engagemang för varje kund och deras båt.",
   },
   {
     icon: Hammer,
@@ -55,8 +55,8 @@ export default function AboutContent() {
               Om <span className="text-gradient">Oss</span>
             </h1>
             <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-              Historien bakom Marstrands pålitliga
-              båtrestaureringsspecialister.
+              Med över 10 års erfarenhet inom glasfiber- och träbåtsreparationer
+              med fokus på kvalitet, hållbarhet och resultat.
             </p>
           </motion.div>
         </div>
@@ -76,27 +76,23 @@ export default function AboutContent() {
 
           <AnimatedSection delay={0.1}>
             <h2 className="font-heading text-3xl md:text-4xl font-bold mb-6">
-              Passion för <span className="text-gradient">Perfektion</span>
+              Möt <span className="text-gradient">Erik</span>
             </h2>
             <div className="space-y-4 text-text-secondary text-base leading-relaxed">
               <p>
-                Baserade i den historiska sjöstaden Marstrand på Sveriges
-                vackra Västkust, föddes Special Plastning & Målning Västkusten
-                ur en djup kärlek till havet och hantverket att restaurera
-                båtar.
+                Med över 10 års erfarenhet inom glasfiber- och träbåtsreparationer
+                erbjuder vi noggrant utförda arbeten med fokus på kvalitet,
+                hållbarhet och resultat.
               </p>
               <p>
-                Med 10+ års erfarenhet av professionell spackling, målning och
-                marin restaurering tillför vi en nivå av precision och omsorg
-                som förvandlar fartyg från slitna till extraordinära. Varje
-                skrov vi restaurerar, varje interiör vi renoverar, speglar
-                vårt engagemang för excellens.
+                Vi är baserade i Göteborg och ute på Klöverön, men som ett mobilt
+                företag arbetar vi runt hela västkusten och tar även uppdrag i
+                andra delar av Sverige vid önskemål.
               </p>
               <p>
-                Vi tror att varje båt har en historia värd att bevara. Oavsett
-                om det är en klassisk segelbåt i trä eller en modern
-                motoryacht behandlar vi varje projekt som om det vore vårt
-                eget — för det är den enda standard vi känner.
+                Vårt mål är alltid detsamma – att leverera ett arbete vi kan vara
+                stolta över. Vi utvecklas ständigt, arbetar med stor noggrannhet
+                och strävar alltid efter högsta möjliga kvalitet i varje projekt.
               </p>
             </div>
 
@@ -147,36 +143,6 @@ export default function AboutContent() {
               </AnimatedSection>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Team section placeholder */}
-      <section className="py-20 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <AnimatedSection>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-6">
-              Möt <span className="text-gradient">Teamet</span>
-            </h2>
-            {/* TODO: Replace with real owner/team photo and bio — critical for trust */}
-            <div className="glass-card rounded-2xl p-8 md:p-12">
-              <div className="w-24 h-24 rounded-full bg-gradient-to-br from-accent-primary/30 to-accent-secondary/30 mx-auto mb-6 flex items-center justify-center">
-                <span className="text-white/20 text-2xl font-bold">👤</span>
-              </div>
-              <h3 className="font-heading text-2xl font-semibold mb-2">
-                {/* TODO: Add real name */}
-                Ägarens Namn
-              </h3>
-              <p className="text-accent-primary text-sm mb-4">
-                Grundare & Ledande Hantverkare
-              </p>
-              <p className="text-text-secondary text-base max-w-lg mx-auto leading-relaxed">
-                {/* TODO: Add real bio */}
-                Med en passion för marint hantverk och mångårig erfarenhet
-                av professionell restaurering tillför vår grundare expertis,
-                engagemang och en personlig touch till varje projekt.
-              </p>
-            </div>
-          </AnimatedSection>
         </div>
       </section>
 
